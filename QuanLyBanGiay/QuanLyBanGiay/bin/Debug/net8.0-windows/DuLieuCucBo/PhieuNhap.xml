@@ -1,0 +1,92 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="PhieuNhap">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="MaPhieuNhap" type="xs:string" minOccurs="0" />
+                <xs:element name="NgayNhap" type="xs:string" minOccurs="0" />
+                <xs:element name="MaNhanVien" type="xs:string" minOccurs="0" />
+                <xs:element name="MaNhaCungCap" type="xs:string" minOccurs="0" />
+                <xs:element name="TongTien" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <PhieuNhap>
+    <MaPhieuNhap>PN001</MaPhieuNhap>
+    <NgayNhap>2025-11-30</NgayNhap>
+    <MaNhanVien>NV01</MaNhanVien>
+    <MaNhaCungCap>NCC01</MaNhaCungCap>
+    <TongTien>5000000</TongTien>
+  </PhieuNhap>
+  <PhieuNhap>
+    <MaPhieuNhap>PN002</MaPhieuNhap>
+    <NgayNhap>2025-12-01</NgayNhap>
+    <MaNhanVien>NV02</MaNhanVien>
+    <MaNhaCungCap>NCC02</MaNhaCungCap>
+    <TongTien>7500000</TongTien>
+  </PhieuNhap>
+  <PhieuNhap>
+    <MaPhieuNhap>PN003</MaPhieuNhap>
+    <NgayNhap>2025-12-02</NgayNhap>
+    <MaNhanVien>NV03</MaNhanVien>
+    <MaNhaCungCap>NCC03</MaNhaCungCap>
+    <TongTien>6800000</TongTien>
+  </PhieuNhap>
+  <PhieuNhap>
+    <MaPhieuNhap>PN004</MaPhieuNhap>
+    <NgayNhap>2025-12-03</NgayNhap>
+    <MaNhanVien>NV04</MaNhanVien>
+    <MaNhaCungCap>NCC04</MaNhaCungCap>
+    <TongTien>9500000</TongTien>
+  </PhieuNhap>
+  <PhieuNhap>
+    <MaPhieuNhap>PN005</MaPhieuNhap>
+    <NgayNhap>2025-12-04</NgayNhap>
+    <MaNhanVien>NV05</MaNhanVien>
+    <MaNhaCungCap>NCC05</MaNhaCungCap>
+    <TongTien>4900000</TongTien>
+  </PhieuNhap>
+  <PhieuNhap>
+    <MaPhieuNhap>PN006</MaPhieuNhap>
+    <NgayNhap>2025-12-05</NgayNhap>
+    <MaNhanVien>NV06</MaNhanVien>
+    <MaNhaCungCap>NCC01</MaNhaCungCap>
+    <TongTien>6500000</TongTien>
+  </PhieuNhap>
+  <PhieuNhap>
+    <MaPhieuNhap>PN007</MaPhieuNhap>
+    <NgayNhap>2025-12-06</NgayNhap>
+    <MaNhanVien>NV07</MaNhanVien>
+    <MaNhaCungCap>NCC02</MaNhaCungCap>
+    <TongTien>8500000</TongTien>
+  </PhieuNhap>
+  <PhieuNhap>
+    <MaPhieuNhap>PN008</MaPhieuNhap>
+    <NgayNhap>2025-12-07</NgayNhap>
+    <MaNhanVien>NV08</MaNhanVien>
+    <MaNhaCungCap>NCC03</MaNhaCungCap>
+    <TongTien>7200000</TongTien>
+  </PhieuNhap>
+  <PhieuNhap>
+    <MaPhieuNhap>PN009</MaPhieuNhap>
+    <NgayNhap>2025-12-08</NgayNhap>
+    <MaNhanVien>NV09</MaNhanVien>
+    <MaNhaCungCap>NCC04</MaNhaCungCap>
+    <TongTien>5700000</TongTien>
+  </PhieuNhap>
+  <PhieuNhap>
+    <MaPhieuNhap>PN010</MaPhieuNhap>
+    <NgayNhap>2025-12-09</NgayNhap>
+    <MaNhanVien>NV10</MaNhanVien>
+    <MaNhaCungCap>NCC05</MaNhaCungCap>
+    <TongTien>4600000</TongTien>
+  </PhieuNhap>
+</NewDataSet>

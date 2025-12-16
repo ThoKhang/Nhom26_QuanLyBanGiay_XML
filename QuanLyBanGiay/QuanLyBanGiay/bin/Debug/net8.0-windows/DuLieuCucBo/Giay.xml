@@ -1,0 +1,113 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <SanPham>
+    <MaGiay>G001</MaGiay>
+    <TenGiay>Giày Nike Air</TenGiay>
+    <Loai>The thao</Loai>
+    <Size>42</Size>
+    <Mau>Trang</Mau>
+    <SoLuongTon>8</SoLuongTon>
+    <DonGiaNhap>800000</DonGiaNhap>
+    <DonGiaBan>1200000</DonGiaBan>
+    <MaNhaCungCap>NCC01</MaNhaCungCap>
+  </SanPham>
+  <SanPham>
+    <MaGiay>G002</MaGiay>
+    <TenGiay>Adidas Ultraboost</TenGiay>
+    <Loai>Chay bo</Loai>
+    <Size>41</Size>
+    <Mau>Den</Mau>
+    <SoLuongTon>15</SoLuongTon>
+    <DonGiaNhap>900000</DonGiaNhap>
+    <DonGiaBan>1500000</DonGiaBan>
+    <MaNhaCungCap>NCC02</MaNhaCungCap>
+  </SanPham>
+  <SanPham>
+    <MaGiay>G003</MaGiay>
+    <TenGiay>Puma Suede Classic</TenGiay>
+    <Loai>Thoi trang</Loai>
+    <Size>40</Size>
+    <Mau>Xanh</Mau>
+    <SoLuongTon>8</SoLuongTon>
+    <DonGiaNhap>750000</DonGiaNhap>
+    <DonGiaBan>1100000</DonGiaBan>
+    <MaNhaCungCap>NCC03</MaNhaCungCap>
+  </SanPham>
+  <SanPham>
+    <MaGiay>G004</MaGiay>
+    <TenGiay>Converse All Star</TenGiay>
+    <Loai>Casual</Loai>
+    <Size>43</Size>
+    <Mau>Trang</Mau>
+    <SoLuongTon>20</SoLuongTon>
+    <DonGiaNhap>500000</DonGiaNhap>
+    <DonGiaBan>800000</DonGiaBan>
+    <MaNhaCungCap>NCC01</MaNhaCungCap>
+  </SanPham>
+  <SanPham>
+    <MaGiay>G005</MaGiay>
+    <TenGiay>Vans Old Skool</TenGiay>
+    <Loai>Streetwear</Loai>
+    <Size>42</Size>
+    <Mau>Den</Mau>
+    <SoLuongTon>12</SoLuongTon>
+    <DonGiaNhap>600000</DonGiaNhap>
+    <DonGiaBan>950000</DonGiaBan>
+    <MaNhaCungCap>NCC02</MaNhaCungCap>
+  </SanPham>
+  <SanPham>
+    <MaGiay>G006</MaGiay>
+    <TenGiay>Balenciaga Triple S</TenGiay>
+    <Loai>Cao cap</Loai>
+    <Size>41</Size>
+    <Mau>Xam</Mau>
+    <SoLuongTon>5</SoLuongTon>
+    <DonGiaNhap>4000000</DonGiaNhap>
+    <DonGiaBan>6500000</DonGiaBan>
+    <MaNhaCungCap>NCC04</MaNhaCungCap>
+  </SanPham>
+  <SanPham>
+    <MaGiay>G007</MaGiay>
+    <TenGiay>MLB Big Ball Chunky</TenGiay>
+    <Loai>Thoi trang</Loai>
+    <Size>39</Size>
+    <Mau>Be</Mau>
+    <SoLuongTon>18</SoLuongTon>
+    <DonGiaNhap>1200000</DonGiaNhap>
+    <DonGiaBan>1800000</DonGiaBan>
+    <MaNhaCungCap>NCC05</MaNhaCungCap>
+  </SanPham>
+  <SanPham>
+    <MaGiay>G008</MaGiay>
+    <TenGiay>New Balance 550</TenGiay>
+    <Loai>Thoi trang</Loai>
+    <Size>42</Size>
+    <Mau>Xanh la</Mau>
+    <SoLuongTon>14</SoLuongTon>
+    <DonGiaNhap>1300000</DonGiaNhap>
+    <DonGiaBan>1900000</DonGiaBan>
+    <MaNhaCungCap>NCC03</MaNhaCungCap>
+  </SanPham>
+  <SanPham>
+    <MaGiay>G009</MaGiay>
+    <TenGiay>Reebok Classic Leather</TenGiay>
+    <Loai>Casual</Loai>
+    <Size>40</Size>
+    <Mau>Trang</Mau>
+    <SoLuongTon>7</SoLuongTon>
+    <DonGiaNhap>700000</DonGiaNhap>
+    <DonGiaBan>1050000</DonGiaBan>
+    <MaNhaCungCap>NCC02</MaNhaCungCap>
+  </SanPham>
+  <SanPham>
+    <MaGiay>G010</MaGiay>
+    <TenGiay>Jordan 1 Retro</TenGiay>
+    <Loai>Bong ro</Loai>
+    <Size>44</Size>
+    <Mau>Do</Mau>
+    <SoLuongTon>6</SoLuongTon>
+    <DonGiaNhap>2200000</DonGiaNhap>
+    <DonGiaBan>3500000</DonGiaBan>
+    <MaNhaCungCap>NCC04</MaNhaCungCap>
+  </SanPham>
+</NewDataSet>

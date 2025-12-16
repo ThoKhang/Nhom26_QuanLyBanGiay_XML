@@ -1,0 +1,17 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <ChamCong>
+    <MaNhanVien>NV01</MaNhanVien>
+    <Ngay>2025-11-30</Ngay>
+    <TrangThai>DiLam</TrangThai>
+    <GioVao>08:00</GioVao>
+    <GioRa>17:00</GioRa>
+  </ChamCong>
+  <ChamCong>
+    <MaNhanVien>NV01</MaNhanVien>
+    <Ngay>2025-12-06</Ngay>
+    <TrangThai>DiLam</TrangThai>
+    <GioVao>00:19</GioVao>
+    <GioRa />
+  </ChamCong>
+</NewDataSet>

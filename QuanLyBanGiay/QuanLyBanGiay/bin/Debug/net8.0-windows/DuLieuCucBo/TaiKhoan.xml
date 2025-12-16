@@ -1,0 +1,73 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <TaiKhoan>
+    <MaNhanVien>NV01</MaNhanVien>
+    <TenDangNhap>admin</TenDangNhap>
+    <MatKhau>123123</MatKhau>
+    <Quyen>Admin</Quyen>
+  </TaiKhoan>
+
+  <TaiKhoan>
+    <MaNhanVien>NV02</MaNhanVien>
+    <TenDangNhap>nv01</TenDangNhap>
+    <MatKhau>123</MatKhau>
+    <Quyen>NhanVien</Quyen>
+  </TaiKhoan>
+
+  <TaiKhoan>
+    <MaNhanVien>NV03</MaNhanVien>
+    <TenDangNhap>ketoan01</TenDangNhap>
+    <MatKhau>123456</MatKhau>
+    <Quyen>KeToan</Quyen>
+  </TaiKhoan>
+
+  <TaiKhoan>
+    <MaNhanVien>NV04</MaNhanVien>
+    <TenDangNhap>thukho01</TenDangNhap>
+    <MatKhau>111111</MatKhau>
+    <Quyen>ThuKho</Quyen>
+  </TaiKhoan>
+
+  <TaiKhoan>
+    <MaNhanVien>NV05</MaNhanVien>
+    <TenDangNhap>banhang01</TenDangNhap>
+    <MatKhau>abc123</MatKhau>
+    <Quyen>BanHang</Quyen>
+  </TaiKhoan>
+
+  <TaiKhoan>
+    <MaNhanVien>NV06</MaNhanVien>
+    <TenDangNhap>nvphu01</TenDangNhap>
+    <MatKhau>654321</MatKhau>
+    <Quyen>NhanVien</Quyen>
+  </TaiKhoan>
+
+  <TaiKhoan>
+    <MaNhanVien>NV07</MaNhanVien>
+    <TenDangNhap>quanly01</TenDangNhap>
+    <MatKhau>888888</MatKhau>
+    <Quyen>QuanLy</Quyen>
+  </TaiKhoan>
+
+  <TaiKhoan>
+    <MaNhanVien>NV08</MaNhanVien>
+    <TenDangNhap>cs01</TenDangNhap>
+    <MatKhau>cs1234</MatKhau>
+    <Quyen>ChamSocKH</Quyen>
+  </TaiKhoan>
+
+  <TaiKhoan>
+    <MaNhanVien>NV09</MaNhanVien>
+    <TenDangNhap>nvkho01</TenDangNhap>
+    <MatKhau>kho123</MatKhau>
+    <Quyen>Kho</Quyen>
+  </TaiKhoan>
+
+  <TaiKhoan>
+    <MaNhanVien>NV10</MaNhanVien>
+    <TenDangNhap>support01</TenDangNhap>
+    <MatKhau>sp123</MatKhau>
+    <Quyen>HoTro</Quyen>
+  </TaiKhoan>
+
+</NewDataSet>

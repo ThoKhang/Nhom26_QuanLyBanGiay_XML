@@ -1,0 +1,113 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <PhieuMua>
+    <MaPhieuMua>PM001</MaPhieuMua>
+    <MaGiay>G001</MaGiay>
+    <SoLuongMua>2</SoLuongMua>
+    <DonGiaBan>1200000</DonGiaBan>
+    <ThanhTien>2400000</ThanhTien>
+    <NgayMua>2025-12-05T10:15:20+07:00</NgayMua>
+    <TenDangNhap>admin</TenDangNhap>
+    <TenNguoiDung>Nguyen Van A</TenNguoiDung>
+  </PhieuMua>
+  <PhieuMua>
+    <MaPhieuMua>PM002</MaPhieuMua>
+    <MaGiay>G002</MaGiay>
+    <SoLuongMua>1</SoLuongMua>
+    <DonGiaBan>1500000</DonGiaBan>
+    <ThanhTien>1500000</ThanhTien>
+    <NgayMua>2025-12-06T14:20:10+07:00</NgayMua>
+    <TenDangNhap>nv01</TenDangNhap>
+    <TenNguoiDung>Tran Minh B</TenNguoiDung>
+  </PhieuMua>
+  <PhieuMua>
+    <MaPhieuMua>PM003</MaPhieuMua>
+    <MaGiay>G004</MaGiay>
+    <SoLuongMua>3</SoLuongMua>
+    <DonGiaBan>800000</DonGiaBan>
+    <ThanhTien>2400000</ThanhTien>
+    <NgayMua>2025-12-06T16:45:55+07:00</NgayMua>
+    <TenDangNhap>admin</TenDangNhap>
+    <TenNguoiDung>Nguyen Van A</TenNguoiDung>
+  </PhieuMua>
+  <PhieuMua>
+    <MaPhieuMua>PM004</MaPhieuMua>
+    <MaGiay>G010</MaGiay>
+    <SoLuongMua>1</SoLuongMua>
+    <DonGiaBan>3500000</DonGiaBan>
+    <ThanhTien>3500000</ThanhTien>
+    <NgayMua>2025-12-07T08:30:12+07:00</NgayMua>
+    <TenDangNhap>nv01</TenDangNhap>
+    <TenNguoiDung>Le Hong C</TenNguoiDung>
+  </PhieuMua>
+  <PhieuMua>
+    <MaPhieuMua>PM005</MaPhieuMua>
+    <MaGiay>G005</MaGiay>
+    <SoLuongMua>2</SoLuongMua>
+    <DonGiaBan>950000</DonGiaBan>
+    <ThanhTien>1900000</ThanhTien>
+    <NgayMua>2025-12-08T09:00:45+07:00</NgayMua>
+    <TenDangNhap>admin</TenDangNhap>
+    <TenNguoiDung>Nguyen Van A</TenNguoiDung>
+  </PhieuMua>
+  <PhieuMua>
+    <MaPhieuMua>PM006</MaPhieuMua>
+    <MaGiay>G008</MaGiay>
+    <SoLuongMua>1</SoLuongMua>
+    <DonGiaBan>1900000</DonGiaBan>
+    <ThanhTien>1900000</ThanhTien>
+    <NgayMua>2025-12-09T13:22:31+07:00</NgayMua>
+    <TenDangNhap>banhang01</TenDangNhap>
+    <TenNguoiDung>Pham Nhat D</TenNguoiDung>
+  </PhieuMua>
+  <PhieuMua>
+    <MaPhieuMua>PM007</MaPhieuMua>
+    <MaGiay>G009</MaGiay>
+    <SoLuongMua>1</SoLuongMua>
+    <DonGiaBan>1050000</DonGiaBan>
+    <ThanhTien>1050000</ThanhTien>
+    <NgayMua>2025-12-09T15:10:05+07:00</NgayMua>
+    <TenDangNhap>ketoan01</TenDangNhap>
+    <TenNguoiDung>Pham Tuan E</TenNguoiDung>
+  </PhieuMua>
+  <PhieuMua>
+    <MaPhieuMua>PM008</MaPhieuMua>
+    <MaGiay>G003</MaGiay>
+    <SoLuongMua>2</SoLuongMua>
+    <DonGiaBan>1100000</DonGiaBan>
+    <ThanhTien>2200000</ThanhTien>
+    <NgayMua>2025-12-10T11:11:11+07:00</NgayMua>
+    <TenDangNhap>admin</TenDangNhap>
+    <TenNguoiDung>Nguyen Van A</TenNguoiDung>
+  </PhieuMua>
+  <PhieuMua>
+    <MaPhieuMua>PM009</MaPhieuMua>
+    <MaGiay>G007</MaGiay>
+    <SoLuongMua>3</SoLuongMua>
+    <DonGiaBan>1800000</DonGiaBan>
+    <ThanhTien>5400000</ThanhTien>
+    <NgayMua>2025-12-10T18:22:50+07:00</NgayMua>
+    <TenDangNhap>nvphu01</TenDangNhap>
+    <TenNguoiDung>Dang Khoa F</TenNguoiDung>
+  </PhieuMua>
+  <PhieuMua>
+    <MaPhieuMua>PM010</MaPhieuMua>
+    <MaGiay>G006</MaGiay>
+    <SoLuongMua>1</SoLuongMua>
+    <DonGiaBan>6500000</DonGiaBan>
+    <ThanhTien>6500000</ThanhTien>
+    <NgayMua>2025-12-10T21:05:33+07:00</NgayMua>
+    <TenDangNhap>admin</TenDangNhap>
+    <TenNguoiDung>Nguyen Van A</TenNguoiDung>
+  </PhieuMua>
+  <PhieuMua>
+    <MaPhieuMua>PM011</MaPhieuMua>
+    <MaGiay>G001</MaGiay>
+    <SoLuongMua>1</SoLuongMua>
+    <DonGiaBan>1200000</DonGiaBan>
+    <ThanhTien>1200000</ThanhTien>
+    <NgayMua>2025-12-05T23:57:54+07:00</NgayMua>
+    <TenDangNhap>admin</TenDangNhap>
+    <TenNguoiDung>Trần Văn Thọ Khang</TenNguoiDung>
+  </PhieuMua>
+</NewDataSet>
