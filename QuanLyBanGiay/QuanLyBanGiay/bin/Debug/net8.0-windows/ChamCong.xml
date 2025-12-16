@@ -9,23 +9,9 @@
   </ChamCong>
   <ChamCong>
     <MaNhanVien>NV01</MaNhanVien>
-    <Ngay>2025-12-06T00:00:00+07:00</Ngay>
+    <Ngay>2025-12-16T00:00:00+07:00</Ngay>
     <TrangThai>DiLam</TrangThai>
-    <GioVao>00:19</GioVao>
-    <GioRa />
-  </ChamCong>
-  <ChamCong>
-    <MaNhanVien>NV01</MaNhanVien>
-    <Ngay>2025-12-15</Ngay>
-    <TrangThai>DiLam</TrangThai>
-    <GioVao>17:58</GioVao>
-    <GioRa />
-  </ChamCong>
-  <ChamCong>
-    <MaNhanVien>NV01</MaNhanVien>
-    <Ngay>2025-12-15</Ngay>
-    <TrangThai>DiLam</TrangThai>
-    <GioVao>18:07</GioVao>
+    <GioVao>14:17</GioVao>
     <GioRa />
   </ChamCong>
 </NewDataSet>

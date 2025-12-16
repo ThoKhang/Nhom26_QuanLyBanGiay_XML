@@ -1,74 +1,63 @@
 <?xml version="1.0" standalone="yes"?>
 <NewDataSet>
-
   <NhaCungCap>
     <MaNhaCungCap>NCC01</MaNhaCungCap>
     <TenNhaCungCap>Công ty Giày ABC</TenNhaCungCap>
     <DiaChi>Hà Nội</DiaChi>
     <DienThoai>0987654321</DienThoai>
   </NhaCungCap>
-
   <NhaCungCap>
     <MaNhaCungCap>NCC02</MaNhaCungCap>
     <TenNhaCungCap>Adidas Việt Nam</TenNhaCungCap>
     <DiaChi>TP. Hồ Chí Minh</DiaChi>
     <DienThoai>0911222333</DienThoai>
   </NhaCungCap>
-
   <NhaCungCap>
     <MaNhaCungCap>NCC03</MaNhaCungCap>
     <TenNhaCungCap>Puma Asia</TenNhaCungCap>
     <DiaChi>Đà Nẵng</DiaChi>
     <DienThoai>0933444555</DienThoai>
   </NhaCungCap>
-
   <NhaCungCap>
     <MaNhaCungCap>NCC04</MaNhaCungCap>
     <TenNhaCungCap>Jordan Sport Co.</TenNhaCungCap>
     <DiaChi>Cần Thơ</DiaChi>
     <DienThoai>0977666888</DienThoai>
   </NhaCungCap>
-
   <NhaCungCap>
     <MaNhaCungCap>NCC05</MaNhaCungCap>
     <TenNhaCungCap>Vans &amp; Converse VN</TenNhaCungCap>
     <DiaChi>Hải Phòng</DiaChi>
     <DienThoai>0966888999</DienThoai>
   </NhaCungCap>
-
   <NhaCungCap>
     <MaNhaCungCap>NCC06</MaNhaCungCap>
     <TenNhaCungCap>New Balance Co.</TenNhaCungCap>
     <DiaChi>Bình Dương</DiaChi>
     <DienThoai>0901234567</DienThoai>
   </NhaCungCap>
-
   <NhaCungCap>
     <MaNhaCungCap>NCC07</MaNhaCungCap>
     <TenNhaCungCap>Reebok Asia</TenNhaCungCap>
     <DiaChi>Đồng Nai</DiaChi>
     <DienThoai>0945678123</DienThoai>
   </NhaCungCap>
-
   <NhaCungCap>
     <MaNhaCungCap>NCC08</MaNhaCungCap>
     <TenNhaCungCap>Balenciaga Supply</TenNhaCungCap>
     <DiaChi>TP. Hồ Chí Minh</DiaChi>
     <DienThoai>0935566778</DienThoai>
   </NhaCungCap>
-
   <NhaCungCap>
     <MaNhaCungCap>NCC09</MaNhaCungCap>
     <TenNhaCungCap>MLB Korea</TenNhaCungCap>
     <DiaChi>Hà Nội</DiaChi>
     <DienThoai>0977888999</DienThoai>
   </NhaCungCap>
-
   <NhaCungCap>
     <MaNhaCungCap>NCC10</MaNhaCungCap>
     <TenNhaCungCap>Giày Thể Thao Việt</TenNhaCungCap>
     <DiaChi>Nha Trang</DiaChi>
     <DienThoai>0922446688</DienThoai>
   </NhaCungCap>
-
 </NewDataSet>

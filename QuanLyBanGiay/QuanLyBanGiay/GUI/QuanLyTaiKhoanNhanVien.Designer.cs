@@ -189,6 +189,7 @@
             button2.TabIndex = 1;
             button2.Text = "Xóa";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click_1;
             // 
             // button1
             // 

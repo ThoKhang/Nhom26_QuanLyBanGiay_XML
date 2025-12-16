@@ -124,6 +124,7 @@
             button4.TabIndex = 3;
             button4.Text = "Hiển thị";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click_1;
             // 
             // button3
             // 
@@ -135,6 +136,7 @@
             button3.TabIndex = 2;
             button3.Text = "Xóa";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click_1;
             // 
             // button2
             // 
@@ -146,6 +148,7 @@
             button2.TabIndex = 1;
             button2.Text = "Sửa";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click_1;
             // 
             // groupBox1
             // 
@@ -177,6 +180,7 @@
             button1.TabIndex = 0;
             button1.Text = "Thêm";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_1;
             // 
             // textBox6
             // 

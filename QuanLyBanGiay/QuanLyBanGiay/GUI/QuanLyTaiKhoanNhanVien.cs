@@ -109,39 +109,6 @@ namespace QuanLyBanGiay.GUI
         }
 
         // ==== BUTTON2: XÓA ====
-        private void button2_Click(object sender, EventArgs e)
-        {
-            string maNV = textBox1.Text.Trim();
-
-            if (string.IsNullOrEmpty(maNV))
-            {
-                MessageBox.Show("Vui lòng chọn tài khoản hoặc nhập mã nhân viên để xóa.",
-                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (!_tk.ExistsByMaNV(maNV))
-            {
-                MessageBox.Show("Không tìm thấy tài khoản của mã nhân viên này.",
-                                "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            DialogResult result = MessageBox.Show(
-                "Bạn có chắc chắn muốn xóa tài khoản của nhân viên " + maNV + " ?",
-                "Xác nhận xóa",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
-            {
-                _tk.DeleteTaiKhoanByMaNV(maNV);
-                MessageBox.Show("Xóa tài khoản thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                dataGridView1.DataSource = null;
-                dataGridView1.DataSource = _tk.Table;
-            }
-        }
 
         // ==== CLICK DÒNG TRONG DATAGRIDVIEW → ĐỔ LÊN TEXTBOX/COMBOBOX ====
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -177,6 +144,40 @@ namespace QuanLyBanGiay.GUI
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            string maNV = textBox1.Text.Trim();
+
+            if (string.IsNullOrEmpty(maNV))
+            {
+                MessageBox.Show("Vui lòng chọn tài khoản hoặc nhập mã nhân viên để xóa.",
+                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!_tk.ExistsByMaNV(maNV))
+            {
+                MessageBox.Show("Không tìm thấy tài khoản của mã nhân viên này.",
+                                "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            DialogResult result = MessageBox.Show(
+                "Bạn có chắc chắn muốn xóa tài khoản của nhân viên " + maNV + " ?",
+                "Xác nhận xóa",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                _tk.DeleteTaiKhoanByMaNV(maNV);
+                MessageBox.Show("Xóa tài khoản thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = _tk.Table;
+            }
         }
     }
 }

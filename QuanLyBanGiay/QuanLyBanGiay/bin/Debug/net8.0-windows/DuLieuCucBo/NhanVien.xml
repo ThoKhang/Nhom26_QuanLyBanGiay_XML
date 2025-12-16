@@ -1,147 +1,123 @@
 <?xml version="1.0" standalone="yes"?>
 <NewDataSet>
-  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
-      <xs:complexType>
-        <xs:choice minOccurs="0" maxOccurs="unbounded">
-          <xs:element name="NhanVien">
-            <xs:complexType>
-              <xs:sequence>
-                <xs:element name="MaNhanVien" type="xs:string" minOccurs="0" />
-                <xs:element name="HoTen" type="xs:string" minOccurs="0" />
-                <xs:element name="NgaySinh" type="xs:string" minOccurs="0" />
-                <xs:element name="GioiTinh" type="xs:string" minOccurs="0" />
-                <xs:element name="DiaChi" type="xs:string" minOccurs="0" />
-                <xs:element name="DienThoai" type="xs:string" minOccurs="0" />
-                <xs:element name="Email" type="xs:string" minOccurs="0" />
-                <xs:element name="ChucVu" type="xs:string" minOccurs="0" />
-                <xs:element name="NgayVaoLam" type="xs:string" minOccurs="0" />
-                <xs:element name="TrangThai" type="xs:string" minOccurs="0" />
-              </xs:sequence>
-            </xs:complexType>
-          </xs:element>
-        </xs:choice>
-      </xs:complexType>
-    </xs:element>
-  </xs:schema>
   <NhanVien>
     <MaNhanVien>NV01</MaNhanVien>
     <HoTen>Trần Văn Thọ Khang</HoTen>
-    <NgaySinh>2000-01-01</NgaySinh>
+    <NgaySinh>2000-01-01T00:00:00+07:00</NgaySinh>
     <GioiTinh>Nam</GioiTinh>
     <DiaChi>HCM</DiaChi>
     <DienThoai>0123456789</DienThoai>
     <Email>a.nguyen@example.com</Email>
     <ChucVu>QuanLy</ChucVu>
-    <NgayVaoLam>2020-05-10</NgayVaoLam>
+    <NgayVaoLam>2020-05-10T00:00:00+07:00</NgayVaoLam>
     <TrangThai>DangLam</TrangThai>
   </NhanVien>
   <NhanVien>
     <MaNhanVien>NV02</MaNhanVien>
     <HoTen>Tran Thi B</HoTen>
-    <NgaySinh>1998-03-15</NgaySinh>
+    <NgaySinh>1998-03-15T00:00:00+07:00</NgaySinh>
     <GioiTinh>Nu</GioiTinh>
     <DiaChi>Ha Noi</DiaChi>
     <DienThoai>0988776655</DienThoai>
     <Email>b.tran@example.com</Email>
     <ChucVu>BanHang</ChucVu>
-    <NgayVaoLam>2021-02-01</NgayVaoLam>
+    <NgayVaoLam>2021-02-01T00:00:00+07:00</NgayVaoLam>
     <TrangThai>DangLam</TrangThai>
   </NhanVien>
   <NhanVien>
     <MaNhanVien>NV03</MaNhanVien>
     <HoTen>Le Van C</HoTen>
-    <NgaySinh>1995-12-12</NgaySinh>
+    <NgaySinh>1995-12-12T00:00:00+07:00</NgaySinh>
     <GioiTinh>Nam</GioiTinh>
     <DiaChi>Da Nang</DiaChi>
     <DienThoai>0911223344</DienThoai>
     <Email>c.le@example.com</Email>
     <ChucVu>Kho</ChucVu>
-    <NgayVaoLam>2019-11-20</NgayVaoLam>
+    <NgayVaoLam>2019-11-20T00:00:00+07:00</NgayVaoLam>
     <TrangThai>DangLam</TrangThai>
   </NhanVien>
   <NhanVien>
     <MaNhanVien>NV04</MaNhanVien>
     <HoTen>Pham Thi D</HoTen>
-    <NgaySinh>2001-07-22</NgaySinh>
+    <NgaySinh>2001-07-22T00:00:00+07:00</NgaySinh>
     <GioiTinh>Nu</GioiTinh>
     <DiaChi>Can Tho</DiaChi>
     <DienThoai>0966554433</DienThoai>
     <Email>d.pham@example.com</Email>
     <ChucVu>ThuNgan</ChucVu>
-    <NgayVaoLam>2022-08-15</NgayVaoLam>
+    <NgayVaoLam>2022-08-15T00:00:00+07:00</NgayVaoLam>
     <TrangThai>DangLam</TrangThai>
   </NhanVien>
   <NhanVien>
     <MaNhanVien>NV05</MaNhanVien>
     <HoTen>Vo Van E</HoTen>
-    <NgaySinh>1997-09-30</NgaySinh>
+    <NgaySinh>1997-09-30T00:00:00+07:00</NgaySinh>
     <GioiTinh>Nam</GioiTinh>
     <DiaChi>Vung Tau</DiaChi>
     <DienThoai>0909090909</DienThoai>
     <Email>e.vo@example.com</Email>
     <ChucVu>BanHang</ChucVu>
-    <NgayVaoLam>2020-10-01</NgayVaoLam>
+    <NgayVaoLam>2020-10-01T00:00:00+07:00</NgayVaoLam>
     <TrangThai>NghiPhep</TrangThai>
   </NhanVien>
   <NhanVien>
     <MaNhanVien>NV06</MaNhanVien>
     <HoTen>Hoang Thi F</HoTen>
-    <NgaySinh>1999-02-05</NgaySinh>
+    <NgaySinh>1999-02-05T00:00:00+07:00</NgaySinh>
     <GioiTinh>Nu</GioiTinh>
     <DiaChi>Hai Phong</DiaChi>
     <DienThoai>0933445566</DienThoai>
     <Email>f.hoang@example.com</Email>
     <ChucVu>BanHang</ChucVu>
-    <NgayVaoLam>2023-01-10</NgayVaoLam>
+    <NgayVaoLam>2023-01-10T00:00:00+07:00</NgayVaoLam>
     <TrangThai>DangLam</TrangThai>
   </NhanVien>
   <NhanVien>
     <MaNhanVien>NV07</MaNhanVien>
     <HoTen>Nguyen Van G</HoTen>
-    <NgaySinh>1994-06-18</NgaySinh>
+    <NgaySinh>1994-06-18T00:00:00+07:00</NgaySinh>
     <GioiTinh>Nam</GioiTinh>
     <DiaChi>Quang Nam</DiaChi>
     <DienThoai>0977889900</DienThoai>
     <Email>g.nguyen@example.com</Email>
     <ChucVu>Kho</ChucVu>
-    <NgayVaoLam>2018-07-12</NgayVaoLam>
+    <NgayVaoLam>2018-07-12T00:00:00+07:00</NgayVaoLam>
     <TrangThai>DangLam</TrangThai>
   </NhanVien>
   <NhanVien>
     <MaNhanVien>NV08</MaNhanVien>
     <HoTen>Le Thi H</HoTen>
-    <NgaySinh>2002-11-11</NgaySinh>
+    <NgaySinh>2002-11-11T00:00:00+07:00</NgaySinh>
     <GioiTinh>Nu</GioiTinh>
     <DiaChi>Binh Duong</DiaChi>
     <DienThoai>0944332211</DienThoai>
     <Email>h.le@example.com</Email>
     <ChucVu>ThuNgan</ChucVu>
-    <NgayVaoLam>2024-03-01</NgayVaoLam>
+    <NgayVaoLam>2024-03-01T00:00:00+07:00</NgayVaoLam>
     <TrangThai>DangLam</TrangThai>
   </NhanVien>
   <NhanVien>
     <MaNhanVien>NV09</MaNhanVien>
     <HoTen>Tran Minh I</HoTen>
-    <NgaySinh>1996-01-25</NgaySinh>
+    <NgaySinh>1996-01-25T00:00:00+07:00</NgaySinh>
     <GioiTinh>Nam</GioiTinh>
     <DiaChi>Long An</DiaChi>
     <DienThoai>0988112233</DienThoai>
     <Email>i.tran@example.com</Email>
     <ChucVu>BanHang</ChucVu>
-    <NgayVaoLam>2023-09-22</NgayVaoLam>
+    <NgayVaoLam>2023-09-22T00:00:00+07:00</NgayVaoLam>
     <TrangThai>DangLam</TrangThai>
   </NhanVien>
   <NhanVien>
     <MaNhanVien>NV10</MaNhanVien>
     <HoTen>Pham Ngoc J</HoTen>
-    <NgaySinh>1993-04-14</NgaySinh>
+    <NgaySinh>1993-04-14T00:00:00+07:00</NgaySinh>
     <GioiTinh>Nu</GioiTinh>
     <DiaChi>HCM</DiaChi>
     <DienThoai>0911555777</DienThoai>
     <Email>j.pham@example.com</Email>
     <ChucVu>QuanLy</ChucVu>
-    <NgayVaoLam>2017-06-05</NgayVaoLam>
+    <NgayVaoLam>2017-06-05T00:00:00+07:00</NgayVaoLam>
     <TrangThai>DangLam</TrangThai>
   </NhanVien>
 </NewDataSet>

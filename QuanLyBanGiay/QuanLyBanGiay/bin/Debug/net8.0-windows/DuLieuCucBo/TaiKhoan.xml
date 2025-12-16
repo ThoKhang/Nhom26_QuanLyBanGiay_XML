@@ -1,73 +1,81 @@
 <?xml version="1.0" standalone="yes"?>
 <NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="TaiKhoan">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="TenDangNhap" type="xs:string" minOccurs="0" />
+                <xs:element name="MatKhau" type="xs:string" minOccurs="0" />
+                <xs:element name="Quyen" type="xs:string" minOccurs="0" />
+                <xs:element name="MaNhanVien" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
   <TaiKhoan>
-    <MaNhanVien>NV01</MaNhanVien>
     <TenDangNhap>admin</TenDangNhap>
     <MatKhau>123123</MatKhau>
     <Quyen>Admin</Quyen>
+    <MaNhanVien>NV01</MaNhanVien>
   </TaiKhoan>
-
   <TaiKhoan>
-    <MaNhanVien>NV02</MaNhanVien>
-    <TenDangNhap>nv01</TenDangNhap>
-    <MatKhau>123</MatKhau>
-    <Quyen>NhanVien</Quyen>
-  </TaiKhoan>
-
-  <TaiKhoan>
-    <MaNhanVien>NV03</MaNhanVien>
-    <TenDangNhap>ketoan01</TenDangNhap>
-    <MatKhau>123456</MatKhau>
-    <Quyen>KeToan</Quyen>
-  </TaiKhoan>
-
-  <TaiKhoan>
-    <MaNhanVien>NV04</MaNhanVien>
-    <TenDangNhap>thukho01</TenDangNhap>
-    <MatKhau>111111</MatKhau>
-    <Quyen>ThuKho</Quyen>
-  </TaiKhoan>
-
-  <TaiKhoan>
-    <MaNhanVien>NV05</MaNhanVien>
     <TenDangNhap>banhang01</TenDangNhap>
     <MatKhau>abc123</MatKhau>
     <Quyen>BanHang</Quyen>
+    <MaNhanVien>NV05</MaNhanVien>
   </TaiKhoan>
-
   <TaiKhoan>
-    <MaNhanVien>NV06</MaNhanVien>
-    <TenDangNhap>nvphu01</TenDangNhap>
-    <MatKhau>654321</MatKhau>
-    <Quyen>NhanVien</Quyen>
-  </TaiKhoan>
-
-  <TaiKhoan>
-    <MaNhanVien>NV07</MaNhanVien>
-    <TenDangNhap>quanly01</TenDangNhap>
-    <MatKhau>888888</MatKhau>
-    <Quyen>QuanLy</Quyen>
-  </TaiKhoan>
-
-  <TaiKhoan>
-    <MaNhanVien>NV08</MaNhanVien>
     <TenDangNhap>cs01</TenDangNhap>
     <MatKhau>cs1234</MatKhau>
     <Quyen>ChamSocKH</Quyen>
+    <MaNhanVien>NV08</MaNhanVien>
   </TaiKhoan>
-
   <TaiKhoan>
-    <MaNhanVien>NV09</MaNhanVien>
+    <TenDangNhap>ketoan01</TenDangNhap>
+    <MatKhau>123456</MatKhau>
+    <Quyen>KeToan</Quyen>
+    <MaNhanVien>NV03</MaNhanVien>
+  </TaiKhoan>
+  <TaiKhoan>
+    <TenDangNhap>nv01</TenDangNhap>
+    <MatKhau>123</MatKhau>
+    <Quyen>NhanVien</Quyen>
+    <MaNhanVien>NV02</MaNhanVien>
+  </TaiKhoan>
+  <TaiKhoan>
     <TenDangNhap>nvkho01</TenDangNhap>
     <MatKhau>kho123</MatKhau>
     <Quyen>Kho</Quyen>
+    <MaNhanVien>NV09</MaNhanVien>
   </TaiKhoan>
-
   <TaiKhoan>
-    <MaNhanVien>NV10</MaNhanVien>
+    <TenDangNhap>nvphu01</TenDangNhap>
+    <MatKhau>654321</MatKhau>
+    <Quyen>NhanVien</Quyen>
+    <MaNhanVien>NV06</MaNhanVien>
+  </TaiKhoan>
+  <TaiKhoan>
+    <TenDangNhap>quanly01</TenDangNhap>
+    <MatKhau>888888</MatKhau>
+    <Quyen>QuanLy</Quyen>
+    <MaNhanVien>NV07</MaNhanVien>
+  </TaiKhoan>
+  <TaiKhoan>
     <TenDangNhap>support01</TenDangNhap>
     <MatKhau>sp123</MatKhau>
     <Quyen>HoTro</Quyen>
+    <MaNhanVien>NV10</MaNhanVien>
   </TaiKhoan>
-
+  <TaiKhoan>
+    <TenDangNhap>thukho01</TenDangNhap>
+    <MatKhau>111111</MatKhau>
+    <Quyen>ThuKho</Quyen>
+    <MaNhanVien>NV04</MaNhanVien>
+  </TaiKhoan>
 </NewDataSet>

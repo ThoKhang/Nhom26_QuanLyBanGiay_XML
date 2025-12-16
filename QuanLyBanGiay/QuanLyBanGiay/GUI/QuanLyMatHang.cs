@@ -112,122 +112,23 @@ namespace QuanLyBanGiay.GUI
         }
 
         // ====== BUTTON1: THÊM ======
-        private void button1_Click(object sender, EventArgs e)
-        {
-            int size, soLuongTon, donGiaNhap, donGiaBan;
-            string error;
-
-            if (!ValidateInput(out error, out size, out soLuongTon, out donGiaNhap, out donGiaBan))
-            {
-                MessageBox.Show(error, "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            string maGiay = textBox1.Text.Trim();
-
-            if (_sp.Exists(maGiay))
-            {
-                MessageBox.Show("Mã giày đã tồn tại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            _sp.AddSanPham(
-                maGiay,
-                textBox2.Text.Trim(),
-                textBox7.Text.Trim(),
-                size,
-                textBox4.Text.Trim(),
-                soLuongTon,
-                donGiaNhap,
-                donGiaBan,
-                textBox9.Text.Trim()
-            );
-
-            MessageBox.Show("Thêm mặt hàng thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = _sp.Table;
-        }
 
         // ====== BUTTON2: SỬA ======
         private void button2_Click(object sender, EventArgs e)
         {
-            int size, soLuongTon, donGiaNhap, donGiaBan;
-            string error;
 
-            if (!ValidateInput(out error, out size, out soLuongTon, out donGiaNhap, out donGiaBan))
-            {
-                MessageBox.Show(error, "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            string maGiay = textBox1.Text.Trim();
-
-            if (!_sp.Exists(maGiay))
-            {
-                MessageBox.Show("Không tìm thấy mã giày để sửa.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            _sp.UpdateSanPham(
-                maGiay,
-                textBox2.Text.Trim(),
-                textBox7.Text.Trim(),
-                size,
-                textBox4.Text.Trim(),
-                soLuongTon,
-                donGiaNhap,
-                donGiaBan,
-                textBox9.Text.Trim()
-            );
-
-            MessageBox.Show("Sửa mặt hàng thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = _sp.Table;
         }
 
         // ====== BUTTON3: XÓA ======
         private void button3_Click(object sender, EventArgs e)
         {
-            string maGiay = textBox1.Text.Trim();
 
-            if (string.IsNullOrEmpty(maGiay))
-            {
-                MessageBox.Show("Vui lòng chọn hoặc nhập mã giày cần xóa.",
-                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (!_sp.Exists(maGiay))
-            {
-                MessageBox.Show("Không tìm thấy mã giày cần xóa.",
-                                "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            DialogResult result = MessageBox.Show(
-                "Bạn có chắc chắn muốn xóa mặt hàng " + maGiay + " ?",
-                "Xác nhận xóa",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
-            {
-                _sp.DeleteSanPham(maGiay);
-                MessageBox.Show("Xóa mặt hàng thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                dataGridView1.DataSource = null;
-                dataGridView1.DataSource = _sp.Table;
-            }
         }
 
         // ====== BUTTON4: HIỂN THỊ / NẠP LẠI ======
         private void button4_Click(object sender, EventArgs e)
         {
-            _sp.Load();
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = _sp.Table;
+            
         }
 
         // ====== BUTTON5: MỞ FILE XML ======
@@ -296,6 +197,121 @@ namespace QuanLyBanGiay.GUI
         private void QuanLyMatHang_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            int size, soLuongTon, donGiaNhap, donGiaBan;
+            string error;
+
+            if (!ValidateInput(out error, out size, out soLuongTon, out donGiaNhap, out donGiaBan))
+            {
+                MessageBox.Show(error, "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string maGiay = textBox1.Text.Trim();
+
+            if (_sp.Exists(maGiay))
+            {
+                MessageBox.Show("Mã giày đã tồn tại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            _sp.AddSanPham(
+                maGiay,
+                textBox2.Text.Trim(),
+                textBox7.Text.Trim(),
+                size,
+                textBox4.Text.Trim(),
+                soLuongTon,
+                donGiaNhap,
+                donGiaBan,
+                textBox9.Text.Trim()
+            );
+
+            MessageBox.Show("Thêm mặt hàng thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = _sp.Table;
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            int size, soLuongTon, donGiaNhap, donGiaBan;
+            string error;
+
+            if (!ValidateInput(out error, out size, out soLuongTon, out donGiaNhap, out donGiaBan))
+            {
+                MessageBox.Show(error, "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string maGiay = textBox1.Text.Trim();
+
+            if (!_sp.Exists(maGiay))
+            {
+                MessageBox.Show("Không tìm thấy mã giày để sửa.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            _sp.UpdateSanPham(
+                maGiay,
+                textBox2.Text.Trim(),
+                textBox7.Text.Trim(),
+                size,
+                textBox4.Text.Trim(),
+                soLuongTon,
+                donGiaNhap,
+                donGiaBan,
+                textBox9.Text.Trim()
+            );
+
+            MessageBox.Show("Sửa mặt hàng thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = _sp.Table;
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            string maGiay = textBox1.Text.Trim();
+
+            if (string.IsNullOrEmpty(maGiay))
+            {
+                MessageBox.Show("Vui lòng chọn hoặc nhập mã giày cần xóa.",
+                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!_sp.Exists(maGiay))
+            {
+                MessageBox.Show("Không tìm thấy mã giày cần xóa.",
+                                "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            DialogResult result = MessageBox.Show(
+                "Bạn có chắc chắn muốn xóa mặt hàng " + maGiay + " ?",
+                "Xác nhận xóa",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                _sp.DeleteSanPham(maGiay);
+                MessageBox.Show("Xóa mặt hàng thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = _sp.Table;
+            }
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            _sp.Load();
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = _sp.Table;
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -45,7 +46,8 @@ namespace QuanLyBanGiay.CLASS
                     string xmlName = GetXmlFileNameForTable(tableName);
                     string path = Path.Combine(folder, xmlName + ".xml");
 
-                    ds.WriteXml(path, XmlWriteMode.IgnoreSchema);
+                    // QUAN TRỌNG: Xuất kèm schema để đọc lại giữ đúng kiểu (Date/Time/Number...)
+                    ds.WriteXml(path, XmlWriteMode.WriteSchema);
 
                     MessageBox.Show($"Đã xuất: {xmlName}.xml", "Thành công");
                 }
@@ -58,7 +60,6 @@ namespace QuanLyBanGiay.CLASS
 
         /* =========================
          *  XML  →  SQL  (1 bảng, KHÔNG DELETE)
-         *  (dùng nội bộ trong XmlToSql_All)
          * ========================= */
         private void InsertFromXml(string tableName)
         {
@@ -80,25 +81,71 @@ namespace QuanLyBanGiay.CLASS
                 return;
             }
 
-            DataTable tb = ds.Tables[0];
+            DataTable xmlTable = ds.Tables[0];
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
 
-                foreach (DataRow row in tb.Rows)
+                // Lấy schema chuẩn từ SQL để biết kiểu dữ liệu thật
+                DataTable sqlSchema = new DataTable(tableName);
+                using (SqlDataAdapter daSchema = new SqlDataAdapter($"SELECT TOP 0 * FROM {tableName}", conn))
                 {
-                    string columns = string.Join(",", tb.Columns.Cast<DataColumn>().Select(c => c.ColumnName));
-                    string parameters = string.Join(",", tb.Columns.Cast<DataColumn>().Select(c => "@" + c.ColumnName));
+                    daSchema.FillSchema(sqlSchema, SchemaType.Source);
+                }
 
-                    string query = $"INSERT INTO {tableName} ({columns}) VALUES ({parameters})";
+                string columns = string.Join(",", sqlSchema.Columns.Cast<DataColumn>().Select(c => c.ColumnName));
+                string parameters = string.Join(",", sqlSchema.Columns.Cast<DataColumn>().Select(c => "@" + c.ColumnName));
+                string query = $"INSERT INTO {tableName} ({columns}) VALUES ({parameters})";
 
+                foreach (DataRow row in xmlTable.Rows)
+                {
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        foreach (DataColumn col in tb.Columns)
+                        foreach (DataColumn sqlCol in sqlSchema.Columns)
                         {
-                            object value = row[col.ColumnName] ?? DBNull.Value;
-                            cmd.Parameters.AddWithValue("@" + col.ColumnName, value);
+                            string colName = sqlCol.ColumnName;
+                            SqlDbType dbType = GetSqlDbType(sqlCol.DataType);
+
+                            object rawValue = DBNull.Value;
+
+                            if (xmlTable.Columns.Contains(colName))
+                                rawValue = row[colName];
+
+                            // NULL / DBNull
+                            if (rawValue == null || rawValue == DBNull.Value)
+                            {
+                                cmd.Parameters.Add("@" + colName, dbType).Value = DBNull.Value;
+                                continue;
+                            }
+
+                            // Nếu là string thì xử lý rỗng + ép kiểu theo cột SQL
+                            if (rawValue is string s)
+                            {
+                                s = s.Trim();
+
+                                // chuỗi rỗng -> NULL (đặc biệt TIME/DATE)
+                                if (string.IsNullOrEmpty(s))
+                                {
+                                    cmd.Parameters.Add("@" + colName, dbType).Value = DBNull.Value;
+                                    continue;
+                                }
+
+                                object converted = ConvertToTargetType(s, sqlCol.DataType);
+
+                                if (converted == null)
+                                {
+                                    // Dữ liệu bẩn -> báo rõ để bạn biết cột nào, giá trị nào
+                                    throw new Exception($"Bảng {tableName} - Cột {colName} không convert được giá trị: '{s}'");
+                                }
+
+                                cmd.Parameters.Add("@" + colName, dbType).Value = converted;
+                            }
+                            else
+                            {
+                                // Đã đúng kiểu (DateTime/TimeSpan/int...)
+                                cmd.Parameters.Add("@" + colName, dbType).Value = rawValue;
+                            }
                         }
 
                         cmd.ExecuteNonQuery();
@@ -121,12 +168,12 @@ namespace QuanLyBanGiay.CLASS
                     // 1. XÓA THEO THỨ TỰ PHỤ THUỘC (tránh lỗi FK)
                     string[] deleteOrder =
                     {
-                        "ChamCong",          // phụ thuộc NhanVien
-                        "ChiTietPhieuNhap",  // phụ thuộc PhieuNhap, SanPham
-                        "PhieuMua",          // phụ thuộc SanPham, TaiKhoan
-                        "PhieuNhap",         // phụ thuộc NhanVien, NhaCungCap
-                        "TaiKhoan",          // phụ thuộc NhanVien
-                        "SanPham",           // phụ thuộc NhaCungCap
+                        "ChamCong",
+                        "ChiTietPhieuNhap",
+                        "PhieuMua",
+                        "PhieuNhap",
+                        "TaiKhoan",
+                        "SanPham",
                         "NhaCungCap",
                         "NhanVien"
                     };
@@ -196,6 +243,66 @@ namespace QuanLyBanGiay.CLASS
             {
                 MessageBox.Show("Lỗi SQL → XML (All): " + ex.Message);
             }
+        }
+
+        // ===== Helpers =====
+
+        private static object ConvertToTargetType(string s, Type targetType)
+        {
+            try
+            {
+                if (targetType == typeof(string))
+                    return s;
+
+                // DATE/DATETIME/DATETIME2
+                if (targetType == typeof(DateTime))
+                {
+                    // nhận cả: 2025-12-15 và 2025-11-30T00:00:00+07:00
+                    if (s.Contains("T") && (s.Contains("+") || s.EndsWith("Z")))
+                        return DateTimeOffset.Parse(s, CultureInfo.InvariantCulture).DateTime;
+
+                    // fallback
+                    return DateTime.Parse(s, CultureInfo.InvariantCulture);
+                }
+
+                if (targetType == typeof(DateTimeOffset))
+                    return DateTimeOffset.Parse(s, CultureInfo.InvariantCulture);
+
+                // TIME
+                if (targetType == typeof(TimeSpan))
+                {
+                    // format phổ biến của bạn: HH:mm
+                    return TimeSpan.ParseExact(s, @"hh\:mm", CultureInfo.InvariantCulture);
+                }
+
+                if (targetType == typeof(int)) return int.Parse(s, CultureInfo.InvariantCulture);
+                if (targetType == typeof(long)) return long.Parse(s, CultureInfo.InvariantCulture);
+                if (targetType == typeof(decimal)) return decimal.Parse(s, CultureInfo.InvariantCulture);
+                if (targetType == typeof(double)) return double.Parse(s, CultureInfo.InvariantCulture);
+                if (targetType == typeof(bool)) return bool.Parse(s);
+
+                // kiểu khác: thử convert chung
+                return Convert.ChangeType(s, targetType, CultureInfo.InvariantCulture);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        private static SqlDbType GetSqlDbType(Type t)
+        {
+            if (t == typeof(string)) return SqlDbType.NVarChar;
+            if (t == typeof(int)) return SqlDbType.Int;
+            if (t == typeof(long)) return SqlDbType.BigInt;
+            if (t == typeof(decimal)) return SqlDbType.Decimal;
+            if (t == typeof(double)) return SqlDbType.Float;
+            if (t == typeof(bool)) return SqlDbType.Bit;
+            if (t == typeof(DateTime)) return SqlDbType.DateTime2;
+            if (t == typeof(DateTimeOffset)) return SqlDbType.DateTimeOffset;
+            if (t == typeof(TimeSpan)) return SqlDbType.Time;
+
+            return SqlDbType.NVarChar;
         }
     }
 }

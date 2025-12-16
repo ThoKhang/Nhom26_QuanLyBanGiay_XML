@@ -1,12 +1,35 @@
 <?xml version="1.0" standalone="yes"?>
 <NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="SanPham">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="MaGiay" type="xs:string" minOccurs="0" />
+                <xs:element name="TenGiay" type="xs:string" minOccurs="0" />
+                <xs:element name="Loai" type="xs:string" minOccurs="0" />
+                <xs:element name="Size" type="xs:int" minOccurs="0" />
+                <xs:element name="Mau" type="xs:string" minOccurs="0" />
+                <xs:element name="SoLuongTon" type="xs:int" minOccurs="0" />
+                <xs:element name="DonGiaNhap" type="xs:int" minOccurs="0" />
+                <xs:element name="DonGiaBan" type="xs:int" minOccurs="0" />
+                <xs:element name="MaNhaCungCap" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
   <SanPham>
     <MaGiay>G001</MaGiay>
     <TenGiay>Giày Nike Air</TenGiay>
     <Loai>The thao</Loai>
     <Size>42</Size>
     <Mau>Trang</Mau>
-    <SoLuongTon>8</SoLuongTon>
+    <SoLuongTon>6</SoLuongTon>
     <DonGiaNhap>800000</DonGiaNhap>
     <DonGiaBan>1200000</DonGiaBan>
     <MaNhaCungCap>NCC01</MaNhaCungCap>
