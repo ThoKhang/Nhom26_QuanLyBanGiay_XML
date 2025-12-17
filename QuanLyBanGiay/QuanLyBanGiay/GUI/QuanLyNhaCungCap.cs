@@ -136,11 +136,14 @@ namespace QuanLyBanGiay.GUI
 
         private void button5_Click(object sender, EventArgs e)
         {
-            // MỞ FILE XML GỐC (GIỮ NGUYÊN)
-            Process.Start(new ProcessStartInfo(_ncc.GetPath())
-            {
-                UseShellExecute = true
-            });
+            //// MỞ FILE XML GỐC (GIỮ NGUYÊN)
+            //Process.Start(new ProcessStartInfo(_ncc.GetPath())
+            //{
+            //    UseShellExecute = true
+            //});
+
+            //mở xslt
+            MoNhaCungCapXsl();
         }
 
         // ================== PREVIEW XSLT ==================
@@ -211,5 +214,48 @@ namespace QuanLyBanGiay.GUI
                 LoadRow(row);
             }
         }
+
+        private void QuanLyNhaCungCap_Load(object sender, EventArgs e)
+        {
+
+        }
+        // ====== XEM BÁO CÁO NHÀ CUNG CẤP BẰNG XSLT ======
+        private void MoNhaCungCapXsl()
+        {
+            try
+            {
+                string folder = Application.StartupPath;
+
+                string xml = _ncc.GetPath(); // NhaCungCap.xml
+                string xsl = Path.Combine(folder, "NhaCungCap.xsl");
+                string html = Path.Combine(folder, "NhaCungCap_Preview.html");
+
+                if (!File.Exists(xml) || !File.Exists(xsl))
+                {
+                    MessageBox.Show("Thiếu NhaCungCap.xml hoặc NhaCungCap.xsl",
+                                    "Lỗi XSLT",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                    return;
+                }
+
+                XslCompiledTransform xslt = new XslCompiledTransform();
+                xslt.Load(xsl);
+                xslt.Transform(xml, html);
+
+                Process.Start(new ProcessStartInfo(html)
+                {
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi XSLT: " + ex.Message,
+                                "Lỗi",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+        }
+
     }
 }
