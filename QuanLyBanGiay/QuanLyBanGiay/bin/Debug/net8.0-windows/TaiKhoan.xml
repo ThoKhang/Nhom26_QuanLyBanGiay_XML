@@ -20,7 +20,7 @@
   </xs:schema>
   <TaiKhoan>
     <TenDangNhap>admin</TenDangNhap>
-    <MatKhau>123123</MatKhau>
+    <MatKhau>12345</MatKhau>
     <Quyen>Admin</Quyen>
     <MaNhanVien>NV01</MaNhanVien>
   </TaiKhoan>

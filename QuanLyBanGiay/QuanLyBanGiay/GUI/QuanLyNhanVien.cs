@@ -5,6 +5,8 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using QuanLyBanGiay.CLASS;
+using System.Xml.Xsl;
+
 
 namespace QuanLyBanGiay.GUI
 {
@@ -254,19 +256,26 @@ namespace QuanLyBanGiay.GUI
         }
 
         // ====== BUTTON5: MỞ FILE XML ======
+        //private void button5_Click(object sender, EventArgs e)
+        //{
+        //    string path = _nv.GetXmlPath();
+
+        //    if (!File.Exists(path))
+        //    {
+        //        MessageBox.Show("Không tìm thấy file NhanVien.xml", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        return;
+        //    }
+
+        //    // Mở file bằng chương trình mặc định (Notepad, VS Code, ...)
+        //    Process.Start(new ProcessStartInfo(path) { UseShellExecute = true });
+        //}
+
+        //thêm xslt
         private void button5_Click(object sender, EventArgs e)
         {
-            string path = _nv.GetXmlPath();
-
-            if (!File.Exists(path))
-            {
-                MessageBox.Show("Không tìm thấy file NhanVien.xml", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // Mở file bằng chương trình mặc định (Notepad, VS Code, ...)
-            Process.Start(new ProcessStartInfo(path) { UseShellExecute = true });
+            MoNhanVienXsl();
         }
+
 
         // ====== BUTTON6: TÌM KIẾM THEO MÃ NHÂN VIÊN ======
         private void button6_Click(object sender, EventArgs e)
@@ -335,5 +344,40 @@ namespace QuanLyBanGiay.GUI
         {
 
         }
+        // ====== XEM BÁO CÁO NHÂN VIÊN BẰNG XSLT ======
+        private void MoNhanVienXsl()
+        {
+            try
+            {
+                string folder = Application.StartupPath;
+
+                string xml = Path.Combine(folder, "NhanVien.xml");
+                string xsl = Path.Combine(folder, "NhanVien.xsl");
+                string html = Path.Combine(folder, "NhanVien_Preview.html");
+
+                if (!File.Exists(xml) || !File.Exists(xsl))
+                {
+                    MessageBox.Show("Thiếu NhanVien.xml hoặc NhanVien.xsl",
+                                    "Lỗi XSLT",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                    return;
+                }
+
+                XslCompiledTransform xslt = new XslCompiledTransform();
+                xslt.Load(xsl);
+                xslt.Transform(xml, html);
+
+                Process.Start(new ProcessStartInfo(html)
+                {
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi XSLT: " + ex.Message);
+            }
+        }
+
     }
 }
