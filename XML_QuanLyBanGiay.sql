@@ -184,3 +184,5 @@ SELECT @sql = @sql + 'SELECT * FROM ' + name + '; '
 FROM sys.tables;
 
 EXEC(@sql);
+
+select * from taikhoan
