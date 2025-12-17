@@ -57,6 +57,8 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            mYSQLSangXMLToolStripMenuItem = new ToolStripMenuItem();
+            xMLSangMYSQLToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -72,7 +74,6 @@
             menuStrip1.Size = new Size(972, 28);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
-            //menuStrip1.ItemClicked += menuStrip1_ItemClicked;
             // 
             // tàiKhoảnToolStripMenuItem
             // 
@@ -194,7 +195,7 @@
             // 
             // chuyểnĐổiDữLiệuToolStripMenuItem
             // 
-            chuyểnĐổiDữLiệuToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { sQLSangXMLToolStripMenuItem, xMLSangSQLToolStripMenuItem });
+            chuyểnĐổiDữLiệuToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { sQLSangXMLToolStripMenuItem, xMLSangSQLToolStripMenuItem, mYSQLSangXMLToolStripMenuItem, xMLSangMYSQLToolStripMenuItem });
             chuyểnĐổiDữLiệuToolStripMenuItem.Font = new Font("Segoe UI", 10.8F);
             chuyểnĐổiDữLiệuToolStripMenuItem.Name = "chuyểnĐổiDữLiệuToolStripMenuItem";
             chuyểnĐổiDữLiệuToolStripMenuItem.Size = new Size(145, 24);
@@ -203,14 +204,14 @@
             // sQLSangXMLToolStripMenuItem
             // 
             sQLSangXMLToolStripMenuItem.Name = "sQLSangXMLToolStripMenuItem";
-            sQLSangXMLToolStripMenuItem.Size = new Size(172, 24);
+            sQLSangXMLToolStripMenuItem.Size = new Size(193, 24);
             sQLSangXMLToolStripMenuItem.Text = "SQL sang XML";
             sQLSangXMLToolStripMenuItem.Click += sQLSangXMLToolStripMenuItem_Click;
             // 
             // xMLSangSQLToolStripMenuItem
             // 
             xMLSangSQLToolStripMenuItem.Name = "xMLSangSQLToolStripMenuItem";
-            xMLSangSQLToolStripMenuItem.Size = new Size(172, 24);
+            xMLSangSQLToolStripMenuItem.Size = new Size(193, 24);
             xMLSangSQLToolStripMenuItem.Text = "XML sang SQL";
             xMLSangSQLToolStripMenuItem.Click += xMLSangSQLToolStripMenuItem_Click;
             // 
@@ -302,6 +303,20 @@
             label1.TabIndex = 2;
             label1.Text = "Xin chào: ";
             // 
+            // mYSQLSangXMLToolStripMenuItem
+            // 
+            mYSQLSangXMLToolStripMenuItem.Name = "mYSQLSangXMLToolStripMenuItem";
+            mYSQLSangXMLToolStripMenuItem.Size = new Size(193, 24);
+            mYSQLSangXMLToolStripMenuItem.Text = "MYSQL sang XML";
+            mYSQLSangXMLToolStripMenuItem.Click += mYSQLSangXMLToolStripMenuItem_Click;
+            // 
+            // xMLSangMYSQLToolStripMenuItem
+            // 
+            xMLSangMYSQLToolStripMenuItem.Name = "xMLSangMYSQLToolStripMenuItem";
+            xMLSangMYSQLToolStripMenuItem.Size = new Size(193, 24);
+            xMLSangMYSQLToolStripMenuItem.Text = "XML sang MYSQL";
+            xMLSangMYSQLToolStripMenuItem.Click += xMLSangMYSQLToolStripMenuItem_Click;
+            // 
             // TrangChu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -354,5 +369,7 @@
         private Label label6;
         private Label label5;
         private Label label4;
+        private ToolStripMenuItem mYSQLSangXMLToolStripMenuItem;
+        private ToolStripMenuItem xMLSangMYSQLToolStripMenuItem;
     }
 }

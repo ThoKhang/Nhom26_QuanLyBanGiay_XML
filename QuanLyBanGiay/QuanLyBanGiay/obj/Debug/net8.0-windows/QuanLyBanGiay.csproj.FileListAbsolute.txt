@@ -149,3 +149,16 @@ C:\Users\ADMIN\Desktop\BaoCaoCuoiKy_Nhom26_QuanLyBanGiay\Nhom26_QuanLyBanGiay_XM
 C:\Users\ADMIN\Desktop\BaoCaoCuoiKy_Nhom26_QuanLyBanGiay\Nhom26_QuanLyBanGiay_XML\QuanLyBanGiay\QuanLyBanGiay\obj\Debug\net8.0-windows\QuanLyBanGiay.pdb
 C:\Users\ADMIN\Desktop\BaoCaoCuoiKy_Nhom26_QuanLyBanGiay\Nhom26_QuanLyBanGiay_XML\QuanLyBanGiay\QuanLyBanGiay\obj\Debug\net8.0-windows\QuanLyBanGiay.genruntimeconfig.cache
 C:\Users\ADMIN\Desktop\BaoCaoCuoiKy_Nhom26_QuanLyBanGiay\Nhom26_QuanLyBanGiay_XML\QuanLyBanGiay\QuanLyBanGiay\obj\Debug\net8.0-windows\ref\QuanLyBanGiay.dll
+C:\Users\ADMIN\Desktop\BaoCaoCuoiKy_Nhom26_QuanLyBanGiay\Nhom26_QuanLyBanGiay_XML\QuanLyBanGiay\QuanLyBanGiay\bin\Debug\net8.0-windows\BouncyCastle.Cryptography.dll
+C:\Users\ADMIN\Desktop\BaoCaoCuoiKy_Nhom26_QuanLyBanGiay\Nhom26_QuanLyBanGiay_XML\QuanLyBanGiay\QuanLyBanGiay\bin\Debug\net8.0-windows\Google.Protobuf.dll
+C:\Users\ADMIN\Desktop\BaoCaoCuoiKy_Nhom26_QuanLyBanGiay\Nhom26_QuanLyBanGiay_XML\QuanLyBanGiay\QuanLyBanGiay\bin\Debug\net8.0-windows\K4os.Compression.LZ4.dll
+C:\Users\ADMIN\Desktop\BaoCaoCuoiKy_Nhom26_QuanLyBanGiay\Nhom26_QuanLyBanGiay_XML\QuanLyBanGiay\QuanLyBanGiay\bin\Debug\net8.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\Users\ADMIN\Desktop\BaoCaoCuoiKy_Nhom26_QuanLyBanGiay\Nhom26_QuanLyBanGiay_XML\QuanLyBanGiay\QuanLyBanGiay\bin\Debug\net8.0-windows\K4os.Hash.xxHash.dll
+C:\Users\ADMIN\Desktop\BaoCaoCuoiKy_Nhom26_QuanLyBanGiay\Nhom26_QuanLyBanGiay_XML\QuanLyBanGiay\QuanLyBanGiay\bin\Debug\net8.0-windows\MySql.Data.dll
+C:\Users\ADMIN\Desktop\BaoCaoCuoiKy_Nhom26_QuanLyBanGiay\Nhom26_QuanLyBanGiay_XML\QuanLyBanGiay\QuanLyBanGiay\bin\Debug\net8.0-windows\System.IO.Pipelines.dll
+C:\Users\ADMIN\Desktop\BaoCaoCuoiKy_Nhom26_QuanLyBanGiay\Nhom26_QuanLyBanGiay_XML\QuanLyBanGiay\QuanLyBanGiay\bin\Debug\net8.0-windows\ZstdSharp.dll
+C:\Users\ADMIN\Desktop\BaoCaoCuoiKy_Nhom26_QuanLyBanGiay\Nhom26_QuanLyBanGiay_XML\QuanLyBanGiay\QuanLyBanGiay\bin\Debug\net8.0-windows\runtimes\win-x64\native\comerr64.dll
+C:\Users\ADMIN\Desktop\BaoCaoCuoiKy_Nhom26_QuanLyBanGiay\Nhom26_QuanLyBanGiay_XML\QuanLyBanGiay\QuanLyBanGiay\bin\Debug\net8.0-windows\runtimes\win-x64\native\gssapi64.dll
+C:\Users\ADMIN\Desktop\BaoCaoCuoiKy_Nhom26_QuanLyBanGiay\Nhom26_QuanLyBanGiay_XML\QuanLyBanGiay\QuanLyBanGiay\bin\Debug\net8.0-windows\runtimes\win-x64\native\k5sprt64.dll
+C:\Users\ADMIN\Desktop\BaoCaoCuoiKy_Nhom26_QuanLyBanGiay\Nhom26_QuanLyBanGiay_XML\QuanLyBanGiay\QuanLyBanGiay\bin\Debug\net8.0-windows\runtimes\win-x64\native\krb5_64.dll
+C:\Users\ADMIN\Desktop\BaoCaoCuoiKy_Nhom26_QuanLyBanGiay\Nhom26_QuanLyBanGiay_XML\QuanLyBanGiay\QuanLyBanGiay\bin\Debug\net8.0-windows\runtimes\win-x64\native\krbcc64.dll
