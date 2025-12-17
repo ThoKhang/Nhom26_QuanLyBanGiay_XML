@@ -38,7 +38,7 @@
   </NhanVien>
   <NhanVien>
     <MaNhanVien>NV02</MaNhanVien>
-    <HoTen>Tran Thi B</HoTen>
+    <HoTen>Phạm Minh Huy</HoTen>
     <NgaySinh>1998-03-15T00:00:00+07:00</NgaySinh>
     <GioiTinh>Nu</GioiTinh>
     <DiaChi>Ha Noi</DiaChi>
@@ -110,13 +110,13 @@
   </NhanVien>
   <NhanVien>
     <MaNhanVien>NV08</MaNhanVien>
-    <HoTen>Le Thi H</HoTen>
+    <HoTen>Phạm Minh Huy</HoTen>
     <NgaySinh>2002-11-11T00:00:00+07:00</NgaySinh>
     <GioiTinh>Nu</GioiTinh>
-    <DiaChi>Binh Duong</DiaChi>
+    <DiaChi>Đà Nẵng</DiaChi>
     <DienThoai>0944332211</DienThoai>
     <Email>h.le@example.com</Email>
-    <ChucVu>ThuNgan</ChucVu>
+    <ChucVu>admin</ChucVu>
     <NgayVaoLam>2024-03-01T00:00:00+07:00</NgayVaoLam>
     <TrangThai>DangLam</TrangThai>
   </NhanVien>

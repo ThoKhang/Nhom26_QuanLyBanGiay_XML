@@ -13,6 +13,8 @@ namespace QuanLyBanGiay.GUI
     public partial class TrangChu : Form
     {
         private SqlXmlConverter _converter = new SqlXmlConverter();
+        private MySqlXmlConverter _mysqlConverter = new MySqlXmlConverter();
+
 
         public TrangChu()
         {
@@ -258,5 +260,18 @@ namespace QuanLyBanGiay.GUI
         private void TrangChu_Load_1(object sender, EventArgs e)
         {
         }
+
+        private void mYSQLSangXMLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!CheckAdminPermission()) return;
+            _mysqlConverter.MySqlToXml_All();
+        }
+
+        private void xMLSangMYSQLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!CheckAdminPermission()) return;
+            _mysqlConverter.XmlToMySql_All();
+        }
+
     }
 }

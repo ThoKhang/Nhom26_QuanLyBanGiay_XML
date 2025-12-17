@@ -31,9 +31,9 @@
     <MaNhanVien>NV05</MaNhanVien>
   </TaiKhoan>
   <TaiKhoan>
-    <TenDangNhap>cs01</TenDangNhap>
-    <MatKhau>cs1234</MatKhau>
-    <Quyen>ChamSocKH</Quyen>
+    <TenDangNhap>Huy</TenDangNhap>
+    <MatKhau>123</MatKhau>
+    <Quyen>admin</Quyen>
     <MaNhanVien>NV08</MaNhanVien>
   </TaiKhoan>
   <TaiKhoan>
