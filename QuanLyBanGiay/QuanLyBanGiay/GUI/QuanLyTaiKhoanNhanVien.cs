@@ -179,5 +179,10 @@ namespace QuanLyBanGiay.GUI
                 dataGridView1.DataSource = _tk.Table;
             }
         }
+
+        private void QuanLyTaiKhoanNhanVien_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

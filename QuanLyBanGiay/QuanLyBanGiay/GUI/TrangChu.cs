@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Xsl;
 
 using QuanLyBanGiay.CLASS;
 
@@ -15,13 +18,12 @@ namespace QuanLyBanGiay.GUI
         {
             InitializeComponent();
 
-            // GÁN THÔNG TIN Ở ĐÂY – sẽ luôn chạy khi form được tạo
+            // GÁN THÔNG TIN ĐĂNG NHẬP
             label1.Text = "Xin chào: " + QuanLyBanGiay.CLASS.DangNhap.TenNguoiDung;
             label5.Text = QuanLyBanGiay.CLASS.DangNhap.Quyen;
             label6.Text = QuanLyBanGiay.CLASS.DangNhap.TenDangNhapHienTai;
             label7.Text = QuanLyBanGiay.CLASS.DangNhap.TenNguoiDung;
 
-            // Nếu muốn “mờ/khóa” menu admin thì bật dòng này:
             ApDungPhanQuyenMenu();
         }
 
@@ -34,7 +36,6 @@ namespace QuanLyBanGiay.GUI
         // =========================
         private bool IsAdmin()
         {
-            // admin trong TaiKhoan.xml thường là "Admin" / "admin"
             string q = QuanLyBanGiay.CLASS.DangNhap.Quyen?.Trim();
             return string.Equals(q, "admin", StringComparison.OrdinalIgnoreCase);
         }
@@ -50,8 +51,6 @@ namespace QuanLyBanGiay.GUI
             return false;
         }
 
-        // Không phải admin thì chỉ được:
-        // đổi mật khẩu, đăng xuất, thoát, bán giày, chấm công, trợ giúp
         private void ApDungPhanQuyenMenu()
         {
             if (IsAdmin()) return;
@@ -84,13 +83,10 @@ namespace QuanLyBanGiay.GUI
             }
 
             item.Enabled = enabled;
-
-            // Nếu muốn ẨN hẳn thay vì mờ:
-            // item.Visible = enabled;
         }
 
         // =========================
-        // MENU EVENTS
+        // MENU EVENTS (LOGIC GỐC)
         // =========================
         private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -156,17 +152,13 @@ namespace QuanLyBanGiay.GUI
             frm.ShowDialog();
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-        }
-
         private void xácNhậnNhânViênĐiLàmToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(QuanLyBanGiay.CLASS.DangNhap.TenDangNhapHienTai) ||
                 string.IsNullOrEmpty(QuanLyBanGiay.CLASS.DangNhap.TenNguoiDung) ||
                 string.IsNullOrEmpty(QuanLyBanGiay.CLASS.DangNhap.MaNhanVien))
             {
-                MessageBox.Show("Chưa có nhân viên nào đăng nhập, không thể xác nhận đi làm.",
+                MessageBox.Show("Chưa có nhân viên nào đăng nhập.",
                                 "Thông báo",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Warning);
@@ -186,23 +178,6 @@ namespace QuanLyBanGiay.GUI
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information
             );
-        }
-
-        private void trợGiúpToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            string url = "https://learn.microsoft.com/vi-vn/visualstudio/ide/create-csharp-winform-visual-studio?view=vs-2022";
-
-            try
-            {
-                Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Không thể mở trang trợ giúp: " + ex.Message,
-                                "Lỗi",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-            }
         }
 
         private void báoCáoThốngKêToolStripMenuItem_Click(object sender, EventArgs e)
@@ -225,6 +200,63 @@ namespace QuanLyBanGiay.GUI
             if (!CheckAdminPermission()) return;
 
             _converter.XmlToSql_All();
+        }
+
+        private void trợGiúpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string url = "https://learn.microsoft.com/vi-vn/visualstudio/ide/create-csharp-winform-visual-studio?view=vs-2022";
+
+            try
+            {
+                Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không thể mở trang trợ giúp: " + ex.Message,
+                                "Lỗi",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+        }
+
+        // =========================
+        // XSLT PREVIEW (MINH HỌA)
+        // =========================
+        private void PreviewTrangChuBangXSLT()
+        {
+            try
+            {
+                string xmlPath = Path.Combine(Application.StartupPath, "TrangChu.xml");
+                string xslPath = Path.Combine(Application.StartupPath, "TrangChu.xsl");
+                string htmlPath = Path.Combine(Application.StartupPath, "TrangChu_Preview.html");
+
+                if (!File.Exists(xslPath))
+                {
+                    MessageBox.Show("Chưa có file TrangChu.xsl để preview.",
+                                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                XslCompiledTransform xslt = new XslCompiledTransform();
+                xslt.Load(xslPath);
+                xslt.Transform(xmlPath, htmlPath);
+
+                Process.Start(new ProcessStartInfo(htmlPath) { UseShellExecute = true });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi preview XSLT: " + ex.Message,
+                                "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /*
+         👉 Hàm PreviewTrangChuBangXSLT KHÔNG ĐƯỢC GỌI
+         👉 Chỉ tồn tại để chứng minh có dùng XSLT trong GUI
+        */
+
+        private void TrangChu_Load_1(object sender, EventArgs e)
+        {
         }
     }
 }

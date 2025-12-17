@@ -331,5 +331,9 @@ namespace QuanLyBanGiay.GUI
             }
         }
 
+        private void QuanLyNhanVien_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

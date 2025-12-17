@@ -246,5 +246,10 @@ namespace QuanLyBanGiay.GUI
             if (File.Exists(path))
                 Process.Start(new ProcessStartInfo(path) { UseShellExecute = true });
         }
+
+        private void QuanLyChiTietPhieuNhap_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

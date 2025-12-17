@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Data;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using System.Xml.Xsl;
 using QuanLyBanGiay.CLASS;
 
 namespace QuanLyBanGiay.GUI
@@ -20,7 +22,7 @@ namespace QuanLyBanGiay.GUI
             dataGridView1.DataSource = _ncc.Table;
         }
 
-        // Validate ràng buộc nhập liệu
+        // ================== VALIDATE ==================
         private bool ValidateInput(out string msg)
         {
             msg = "";
@@ -51,7 +53,8 @@ namespace QuanLyBanGiay.GUI
             textBox5.Text = row["DienThoai"].ToString();
         }
 
-        // BUTTON1: Thêm
+        // ================== CRUD ==================
+
         private void button1_Click(object sender, EventArgs e)
         {
             string msg;
@@ -78,7 +81,6 @@ namespace QuanLyBanGiay.GUI
             dataGridView1.DataSource = _ncc.Table;
         }
 
-        // BUTTON2: Sửa
         private void button2_Click(object sender, EventArgs e)
         {
             string msg;
@@ -105,7 +107,6 @@ namespace QuanLyBanGiay.GUI
             dataGridView1.DataSource = _ncc.Table;
         }
 
-        // BUTTON3: Xóa
         private void button3_Click(object sender, EventArgs e)
         {
             string ma = textBox1.Text.Trim();
@@ -116,7 +117,8 @@ namespace QuanLyBanGiay.GUI
                 return;
             }
 
-            if (MessageBox.Show("Bạn có chắc muốn xóa?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn có chắc muốn xóa?", "Xác nhận",
+                MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 _ncc.Delete(ma);
                 MessageBox.Show("Xóa thành công!");
@@ -124,20 +126,57 @@ namespace QuanLyBanGiay.GUI
             }
         }
 
-        // BUTTON4: Hiển thị lại
         private void button4_Click(object sender, EventArgs e)
         {
             _ncc.Load();
             dataGridView1.DataSource = _ncc.Table;
         }
 
-        // BUTTON5: Mở file xml
+        // ================== XML ==================
+
         private void button5_Click(object sender, EventArgs e)
         {
-            Process.Start(new ProcessStartInfo(_ncc.GetPath()) { UseShellExecute = true });
+            // MỞ FILE XML GỐC (GIỮ NGUYÊN)
+            Process.Start(new ProcessStartInfo(_ncc.GetPath())
+            {
+                UseShellExecute = true
+            });
         }
 
-        // BUTTON6: Tìm kiếm
+        // ================== PREVIEW XSLT ==================
+        // ⚠️ CHỈ THÊM – KHÔNG ẢNH HƯỞNG LOGIC CŨ
+
+        private void buttonPreview_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string xmlPath = _ncc.GetPath();
+                string xslPath = Path.Combine(Application.StartupPath, "NhaCungCap.xsl");
+                string htmlPath = Path.Combine(Application.StartupPath, "NhaCungCap_Preview.html");
+
+                if (!File.Exists(xslPath))
+                {
+                    MessageBox.Show("Chưa có file NhaCungCap.xsl để preview.");
+                    return;
+                }
+
+                XslCompiledTransform xslt = new XslCompiledTransform();
+                xslt.Load(xslPath);
+                xslt.Transform(xmlPath, htmlPath);
+
+                Process.Start(new ProcessStartInfo(htmlPath)
+                {
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi preview XSLT: " + ex.Message);
+            }
+        }
+
+        // ================== SEARCH ==================
+
         private void button6_Click(object sender, EventArgs e)
         {
             string ma = textBox3.Text.Trim();
@@ -151,7 +190,6 @@ namespace QuanLyBanGiay.GUI
 
             LoadRow(row);
 
-            // Tô sáng dòng
             foreach (DataGridViewRow dg in dataGridView1.Rows)
             {
                 if (dg.Cells["MaNhaCungCap"].Value != null &&
@@ -164,19 +202,14 @@ namespace QuanLyBanGiay.GUI
             }
         }
 
-        // Click lên DataGridView → hiện vào textbox
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                DataRow row = ((DataRowView)dataGridView1.Rows[e.RowIndex].DataBoundItem).Row;
+                DataRow row =
+                    ((DataRowView)dataGridView1.Rows[e.RowIndex].DataBoundItem).Row;
                 LoadRow(row);
             }
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

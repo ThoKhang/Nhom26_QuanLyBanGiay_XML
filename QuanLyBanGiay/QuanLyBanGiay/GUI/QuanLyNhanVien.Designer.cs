@@ -67,7 +67,7 @@ namespace QuanLyBanGiay.GUI
             label1.ForeColor = Color.FromArgb(224, 224, 224);
             label1.Location = new Point(346, 24);
             label1.Name = "label1";
-            label1.Size = new Size(421, 62);
+            label1.Size = new Size(343, 51);
             label1.TabIndex = 0;
             label1.Text = "Quản lý nhân viên";
             // 
@@ -79,7 +79,7 @@ namespace QuanLyBanGiay.GUI
             label2.ForeColor = SystemColors.ButtonHighlight;
             label2.Location = new Point(52, 120);
             label2.Name = "label2";
-            label2.Size = new Size(117, 23);
+            label2.Size = new Size(98, 19);
             label2.TabIndex = 1;
             label2.Text = "Mã nhân viên";
             label2.Click += label2_Click;
@@ -92,7 +92,7 @@ namespace QuanLyBanGiay.GUI
             label3.ForeColor = SystemColors.ButtonHighlight;
             label3.Location = new Point(52, 202);
             label3.Name = "label3";
-            label3.Size = new Size(86, 23);
+            label3.Size = new Size(72, 19);
             label3.TabIndex = 2;
             label3.Text = "Tên nhân ";
             // 
@@ -104,7 +104,7 @@ namespace QuanLyBanGiay.GUI
             label4.ForeColor = SystemColors.ButtonHighlight;
             label4.Location = new Point(52, 289);
             label4.Name = "label4";
-            label4.Size = new Size(94, 23);
+            label4.Size = new Size(79, 19);
             label4.TabIndex = 3;
             label4.Text = "Ngày sinh ";
             // 
@@ -116,7 +116,7 @@ namespace QuanLyBanGiay.GUI
             label5.ForeColor = SystemColors.ButtonHighlight;
             label5.Location = new Point(580, 121);
             label5.Name = "label5";
-            label5.Size = new Size(80, 23);
+            label5.Size = new Size(65, 19);
             label5.TabIndex = 4;
             label5.Text = "Giới tính";
             // 
@@ -128,7 +128,7 @@ namespace QuanLyBanGiay.GUI
             label6.ForeColor = SystemColors.ButtonHighlight;
             label6.Location = new Point(580, 203);
             label6.Name = "label6";
-            label6.Size = new Size(65, 23);
+            label6.Size = new Size(54, 19);
             label6.TabIndex = 5;
             label6.Text = "Địa chỉ";
             // 
@@ -140,7 +140,7 @@ namespace QuanLyBanGiay.GUI
             label7.ForeColor = SystemColors.ButtonHighlight;
             label7.Location = new Point(580, 290);
             label7.Name = "label7";
-            label7.Size = new Size(93, 23);
+            label7.Size = new Size(77, 19);
             label7.TabIndex = 6;
             label7.Text = "Điện thoại";
             // 
@@ -152,7 +152,7 @@ namespace QuanLyBanGiay.GUI
             label8.ForeColor = SystemColors.ButtonHighlight;
             label8.Location = new Point(990, 121);
             label8.Name = "label8";
-            label8.Size = new Size(92, 23);
+            label8.Size = new Size(76, 19);
             label8.TabIndex = 7;
             label8.Text = "Trạng thái";
             // 
@@ -161,7 +161,7 @@ namespace QuanLyBanGiay.GUI
             textBox1.Font = new Font("Segoe UI", 13.8F);
             textBox1.Location = new Point(199, 113);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(225, 38);
+            textBox1.Size = new Size(225, 32);
             textBox1.TabIndex = 8;
             // 
             // textBox2
@@ -169,7 +169,7 @@ namespace QuanLyBanGiay.GUI
             textBox2.Font = new Font("Segoe UI", 13.8F);
             textBox2.Location = new Point(199, 195);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(225, 38);
+            textBox2.Size = new Size(225, 32);
             textBox2.TabIndex = 9;
             // 
             // textBox4
@@ -177,7 +177,7 @@ namespace QuanLyBanGiay.GUI
             textBox4.Font = new Font("Segoe UI", 13.8F);
             textBox4.Location = new Point(724, 200);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(225, 38);
+            textBox4.Size = new Size(225, 32);
             textBox4.TabIndex = 11;
             // 
             // textBox5
@@ -185,7 +185,7 @@ namespace QuanLyBanGiay.GUI
             textBox5.Font = new Font("Segoe UI", 13.8F);
             textBox5.Location = new Point(724, 287);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(225, 38);
+            textBox5.Size = new Size(225, 32);
             textBox5.TabIndex = 12;
             // 
             // textBox6
@@ -193,7 +193,7 @@ namespace QuanLyBanGiay.GUI
             textBox6.Font = new Font("Segoe UI", 13.8F);
             textBox6.Location = new Point(724, 114);
             textBox6.Name = "textBox6";
-            textBox6.Size = new Size(225, 38);
+            textBox6.Size = new Size(225, 32);
             textBox6.TabIndex = 13;
             // 
             // dateTimePicker1
@@ -201,7 +201,7 @@ namespace QuanLyBanGiay.GUI
             dateTimePicker1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dateTimePicker1.Location = new Point(199, 289);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(324, 31);
+            dateTimePicker1.Size = new Size(324, 27);
             dateTimePicker1.TabIndex = 14;
             // 
             // comboBox1
@@ -209,7 +209,7 @@ namespace QuanLyBanGiay.GUI
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(990, 160);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 31);
+            comboBox1.Size = new Size(151, 27);
             comboBox1.TabIndex = 15;
             // 
             // groupBox1
@@ -248,7 +248,7 @@ namespace QuanLyBanGiay.GUI
             textBox3.Font = new Font("Segoe UI", 13.8F);
             textBox3.Location = new Point(686, 123);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(225, 38);
+            textBox3.Size = new Size(225, 32);
             textBox3.TabIndex = 9;
             // 
             // label9
@@ -256,7 +256,7 @@ namespace QuanLyBanGiay.GUI
             label9.AutoSize = true;
             label9.Location = new Point(474, 133);
             label9.Name = "label9";
-            label9.Size = new Size(194, 23);
+            label9.Size = new Size(161, 19);
             label9.TabIndex = 5;
             label9.Text = "Tìm nhân viên theo mã";
             // 
@@ -327,7 +327,7 @@ namespace QuanLyBanGiay.GUI
             // 
             // QuanLyNhanVien
             // 
-            AutoScaleDimensions = new SizeF(9F, 23F);
+            AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1153, 897);
@@ -351,6 +351,7 @@ namespace QuanLyBanGiay.GUI
             Font = new Font("Segoe UI", 10.2F);
             Name = "QuanLyNhanVien";
             Text = "QuanLyNhanVien";
+            Load += QuanLyNhanVien_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

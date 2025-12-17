@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ThongKe>
+  <TongTaiKhoan>5</TongTaiKhoan>
+  <TongNhanVien>10</TongNhanVien>
+  <TongNhanVienDangLam>8</TongNhanVienDangLam>
+  <TongMatHangDangBan>20</TongMatHangDangBan>
+  <TongPhieuHangDaBan>35</TongPhieuHangDaBan>
+  <TongTienDaBan>150000000</TongTienDaBan>
+  <TongNhaCungCap>4</TongNhaCungCap>
+  <TongMatHangDaCungCap>120</TongMatHangDaCungCap>
+  <TongTienDaMua>90000000</TongTienDaMua>
+</ThongKe>

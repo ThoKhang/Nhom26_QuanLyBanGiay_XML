@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\3_BaiTap\\XML_CK\\QuanLyBanGiay\\QuanLyBanGiay\\QuanLyBanGiay.csproj": {}
+    "C:\\Users\\ADMIN\\Desktop\\BaoCaoCuoiKy_Nhom26_QuanLyBanGiay\\Nhom26_QuanLyBanGiay_XML\\QuanLyBanGiay\\QuanLyBanGiay\\QuanLyBanGiay.csproj": {}
   },
   "projects": {
-    "D:\\3_BaiTap\\XML_CK\\QuanLyBanGiay\\QuanLyBanGiay\\QuanLyBanGiay.csproj": {
+    "C:\\Users\\ADMIN\\Desktop\\BaoCaoCuoiKy_Nhom26_QuanLyBanGiay\\Nhom26_QuanLyBanGiay_XML\\QuanLyBanGiay\\QuanLyBanGiay\\QuanLyBanGiay.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\3_BaiTap\\XML_CK\\QuanLyBanGiay\\QuanLyBanGiay\\QuanLyBanGiay.csproj",
+        "projectUniqueName": "C:\\Users\\ADMIN\\Desktop\\BaoCaoCuoiKy_Nhom26_QuanLyBanGiay\\Nhom26_QuanLyBanGiay_XML\\QuanLyBanGiay\\QuanLyBanGiay\\QuanLyBanGiay.csproj",
         "projectName": "QuanLyBanGiay",
-        "projectPath": "D:\\3_BaiTap\\XML_CK\\QuanLyBanGiay\\QuanLyBanGiay\\QuanLyBanGiay.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\3_BaiTap\\XML_CK\\QuanLyBanGiay\\QuanLyBanGiay\\obj\\",
+        "projectPath": "C:\\Users\\ADMIN\\Desktop\\BaoCaoCuoiKy_Nhom26_QuanLyBanGiay\\Nhom26_QuanLyBanGiay_XML\\QuanLyBanGiay\\QuanLyBanGiay\\QuanLyBanGiay.csproj",
+        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ADMIN\\Desktop\\BaoCaoCuoiKy_Nhom26_QuanLyBanGiay\\Nhom26_QuanLyBanGiay_XML\\QuanLyBanGiay\\QuanLyBanGiay\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0-windows7.0": {
@@ -74,7 +74,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

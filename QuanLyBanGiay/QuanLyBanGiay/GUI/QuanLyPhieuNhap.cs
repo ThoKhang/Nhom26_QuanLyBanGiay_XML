@@ -3,6 +3,7 @@ using System.Data;
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
+using System.Xml.Xsl;
 using QuanLyBanGiay.CLASS;
 
 namespace QuanLyBanGiay.GUI
@@ -54,12 +55,6 @@ namespace QuanLyBanGiay.GUI
             return true;
         }
 
-        // ========== BUTTON1: THÊM ==========
-
-
-        // ========== BUTTON2: SỬA ==========
-
-
         // ========== BUTTON3: XÓA ==========
         private void button3_Click(object sender, EventArgs e)
         {
@@ -93,11 +88,6 @@ namespace QuanLyBanGiay.GUI
             dataGridView1.DataSource = _pn.Table;
         }
 
-        // ========== BUTTON4: HIỂN THỊ ==========
-
-
-        // ========== BUTTON5: XEM XML ==========
-
         // ========== BUTTON6: TÌM KIẾM ==========
         private void button6_Click(object sender, EventArgs e)
         {
@@ -117,17 +107,15 @@ namespace QuanLyBanGiay.GUI
                 return;
             }
 
-            // Đổ dữ liệu lên các control
             textBox1.Text = row["MaPhieuNhap"].ToString();
-            DateTime ngay;
-            if (DateTime.TryParse(row["NgayNhap"].ToString(), out ngay))
+
+            if (DateTime.TryParse(row["NgayNhap"].ToString(), out DateTime ngay))
                 dateTimePicker1.Value = ngay;
 
             textBox7.Text = row["MaNhanVien"].ToString();
             textBox6.Text = row["MaNhaCungCap"].ToString();
             textBox4.Text = row["TongTien"].ToString();
 
-            // ====== TÔ ĐẬM DÒNG TRONG DATAGRIDVIEW ======
             dataGridView1.ClearSelection();
 
             foreach (DataGridViewRow dgRow in dataGridView1.Rows)
@@ -137,13 +125,12 @@ namespace QuanLyBanGiay.GUI
                         .Equals(maTim, StringComparison.OrdinalIgnoreCase))
                 {
                     dgRow.Selected = true;
-                    dataGridView1.CurrentCell = dgRow.Cells[0]; // focus vào cột đầu
-                    dataGridView1.FirstDisplayedScrollingRowIndex = dgRow.Index; // cuộn tới dòng đó
+                    dataGridView1.CurrentCell = dgRow.Cells[0];
+                    dataGridView1.FirstDisplayedScrollingRowIndex = dgRow.Index;
                     break;
                 }
             }
         }
-
 
         // ========== CLICK ROW ==========
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -159,20 +146,56 @@ namespace QuanLyBanGiay.GUI
             textBox4.Text = r.Cells["TongTien"].Value.ToString();
         }
 
-        // ========== BUTTON7: MỞ CHI TIẾT PHIẾU NHẬP ==========
+        // ========== BUTTON7: CHI TIẾT ==========
         private void button7_Click_1(object sender, EventArgs e)
         {
             QuanLyChiTietPhieuNhap frm = new QuanLyChiTietPhieuNhap();
             frm.ShowDialog();
         }
 
+        // ===== XML OPEN CŨ (COMMENT) =====
+        /*
         private void button5_Click_1(object sender, EventArgs e)
         {
             string path = _pn.GetXmlPath();
             if (File.Exists(path))
                 Process.Start(new ProcessStartInfo(path) { UseShellExecute = true });
         }
+        */
 
+        // ===== XSLT PREVIEW =====
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            PreviewPhieuNhapXsl();
+        }
+
+        private void PreviewPhieuNhapXsl()
+        {
+            try
+            {
+                string xml = Path.Combine(Application.StartupPath, "PhieuNhap.xml");
+                string xsl = Path.Combine(Application.StartupPath, "PhieuNhap.xsl");
+                string html = Path.Combine(Application.StartupPath, "PhieuNhap_Preview.html");
+
+                if (!File.Exists(xsl))
+                {
+                    MessageBox.Show("Chưa có file PhieuNhap.xsl");
+                    return;
+                }
+
+                XslCompiledTransform xslt = new XslCompiledTransform();
+                xslt.Load(xsl);
+                xslt.Transform(xml, html);
+
+                Process.Start(new ProcessStartInfo(html) { UseShellExecute = true });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi XSLT: " + ex.Message);
+            }
+        }
+
+        // ========== BUTTON1: THÊM ==========
         private void button1_Click_1(object sender, EventArgs e)
         {
             int tongTien;
@@ -204,11 +227,7 @@ namespace QuanLyBanGiay.GUI
             Reload();
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
+        // ========== BUTTON2: SỬA ==========
         private void button2_Click(object sender, EventArgs e)
         {
             int tongTien;
@@ -243,6 +262,10 @@ namespace QuanLyBanGiay.GUI
         private void button4_Click_1(object sender, EventArgs e)
         {
             Reload();
+        }
+
+        private void QuanLyPhieuNhap_Load(object sender, EventArgs e)
+        {
         }
     }
 }

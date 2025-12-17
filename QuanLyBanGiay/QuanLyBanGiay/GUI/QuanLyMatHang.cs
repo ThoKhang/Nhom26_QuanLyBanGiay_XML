@@ -4,6 +4,8 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Xsl;
 using QuanLyBanGiay.CLASS;
 
 namespace QuanLyBanGiay.GUI
@@ -112,93 +114,6 @@ namespace QuanLyBanGiay.GUI
         }
 
         // ====== BUTTON1: THÊM ======
-
-        // ====== BUTTON2: SỬA ======
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        // ====== BUTTON3: XÓA ======
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        // ====== BUTTON4: HIỂN THỊ / NẠP LẠI ======
-        private void button4_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        // ====== BUTTON5: MỞ FILE XML ======
-        private void button5_Click(object sender, EventArgs e)
-        {
-            string path = _sp.GetXmlPath();
-
-            if (!File.Exists(path))
-            {
-                MessageBox.Show("Không tìm thấy file SanPham.xml", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            Process.Start(new ProcessStartInfo(path) { UseShellExecute = true });
-        }
-
-        // ====== BUTTON6: TÌM KIẾM THEO MÃ GIÀY ======
-        private void button6_Click(object sender, EventArgs e)
-        {
-            string maTim = textBox3.Text.Trim();
-
-            if (string.IsNullOrEmpty(maTim))
-            {
-                MessageBox.Show("Vui lòng nhập mã giày cần tìm.",
-                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            DataRow row = _sp.FindByMa(maTim);
-
-            if (row == null)
-            {
-                MessageBox.Show("Không tìm thấy giày với mã: " + maTim,
-                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            LoadRowToControls(row);
-
-            // Chọn dòng tương ứng trên DataGridView
-            foreach (DataGridViewRow dgRow in dataGridView1.Rows)
-            {
-                if (dgRow.Cells["MaGiay"].Value != null &&
-                    dgRow.Cells["MaGiay"].Value.ToString().Trim()
-                        .Equals(maTim, StringComparison.OrdinalIgnoreCase))
-                {
-                    dgRow.Selected = true;
-                    dataGridView1.CurrentCell = dgRow.Cells[0];
-                    break;
-                }
-            }
-        }
-
-        // ====== CLICK DÒNG TRONG DATAGRIDVIEW → ĐỔ LÊN TEXTBOX ======
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0) return;
-
-            DataGridViewRow dgRow = dataGridView1.Rows[e.RowIndex];
-            if (dgRow.DataBoundItem is DataRowView drv)
-            {
-                LoadRowToControls(drv.Row);
-            }
-        }
-
-        private void QuanLyMatHang_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click_1(object sender, EventArgs e)
         {
             int size, soLuongTon, donGiaNhap, donGiaBan;
@@ -236,6 +151,7 @@ namespace QuanLyBanGiay.GUI
             dataGridView1.DataSource = _sp.Table;
         }
 
+        // ====== BUTTON2: SỬA ======
         private void button2_Click_1(object sender, EventArgs e)
         {
             int size, soLuongTon, donGiaNhap, donGiaBan;
@@ -273,6 +189,7 @@ namespace QuanLyBanGiay.GUI
             dataGridView1.DataSource = _sp.Table;
         }
 
+        // ====== BUTTON3: XÓA ======
         private void button3_Click_1(object sender, EventArgs e)
         {
             string maGiay = textBox1.Text.Trim();
@@ -307,11 +224,114 @@ namespace QuanLyBanGiay.GUI
             }
         }
 
+        // ====== BUTTON4: HIỂN THỊ / NẠP LẠI ======
         private void button4_Click_1(object sender, EventArgs e)
         {
             _sp.Load();
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = _sp.Table;
+        }
+
+        // ====== BUTTON5: MỞ FILE XML (CŨ – COMMENT) ======
+        /*
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string path = _sp.GetXmlPath();
+
+            if (!File.Exists(path))
+            {
+                MessageBox.Show("Không tìm thấy file SanPham.xml", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            Process.Start(new ProcessStartInfo(path) { UseShellExecute = true });
+        }
+        */
+
+        // ====== BUTTON5: PREVIEW BẰNG XSLT ======
+        private void button5_Click(object sender, EventArgs e)
+        {
+            PreviewSanPhamBangXSLT();
+        }
+
+        // ====== XSLT PREVIEW (MINH HỌA – KHÔNG ẢNH HƯỞNG LOGIC) ======
+        private void PreviewSanPhamBangXSLT()
+        {
+            try
+            {
+                string xmlPath = Path.Combine(Application.StartupPath, "Giay.xml");
+                string xslPath = Path.Combine(Application.StartupPath, "Giay.xsl");
+                string htmlPath = Path.Combine(Application.StartupPath, "Giay_Preview.html");
+
+                if (!File.Exists(xslPath))
+                {
+                    MessageBox.Show("Chưa có file Giay.xsl để preview.",
+                                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                XslCompiledTransform xslt = new XslCompiledTransform();
+                xslt.Load(xslPath);
+                xslt.Transform(xmlPath, htmlPath);
+
+                Process.Start(new ProcessStartInfo(htmlPath) { UseShellExecute = true });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi preview XSLT: " + ex.Message,
+                                "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // ====== BUTTON6: TÌM KIẾM ======
+        private void button6_Click(object sender, EventArgs e)
+        {
+            string maTim = textBox3.Text.Trim();
+
+            if (string.IsNullOrEmpty(maTim))
+            {
+                MessageBox.Show("Vui lòng nhập mã giày cần tìm.",
+                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DataRow row = _sp.FindByMa(maTim);
+
+            if (row == null)
+            {
+                MessageBox.Show("Không tìm thấy giày với mã: " + maTim,
+                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            LoadRowToControls(row);
+
+            foreach (DataGridViewRow dgRow in dataGridView1.Rows)
+            {
+                if (dgRow.Cells["MaGiay"].Value != null &&
+                    dgRow.Cells["MaGiay"].Value.ToString().Trim()
+                        .Equals(maTim, StringComparison.OrdinalIgnoreCase))
+                {
+                    dgRow.Selected = true;
+                    dataGridView1.CurrentCell = dgRow.Cells[0];
+                    break;
+                }
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            DataGridViewRow dgRow = dataGridView1.Rows[e.RowIndex];
+            if (dgRow.DataBoundItem is DataRowView drv)
+            {
+                LoadRowToControls(drv.Row);
+            }
+        }
+
+        private void QuanLyMatHang_Load(object sender, EventArgs e)
+        {
         }
     }
 }

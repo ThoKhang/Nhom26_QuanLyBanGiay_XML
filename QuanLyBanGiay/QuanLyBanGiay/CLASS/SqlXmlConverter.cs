@@ -11,7 +11,7 @@ namespace QuanLyBanGiay.CLASS
     internal class SqlXmlConverter
     {
         private string connectionString =
-            @"Server=localhost;Database=QuanLyBanGiay;Trusted_Connection=True;TrustServerCertificate=True;";
+            @"Server=localhost\SQLEXPRESS01;Database=QuanLyBanGiay;User Id=sa;Password=12345;TrustServerCertificate=True;";
 
         private string folder = Application.StartupPath;
 

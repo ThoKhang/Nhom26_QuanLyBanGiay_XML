@@ -71,5 +71,10 @@ namespace QuanLyBanGiay.GUI
         private void label1_Click(object sender, EventArgs e)
         {
         }
+
+        private void DoiMatKhau_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

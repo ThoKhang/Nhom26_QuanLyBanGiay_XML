@@ -68,37 +68,38 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { tàiKhoảnToolStripMenuItem, quảnLýNhânViênToolStripMenuItem, kinhDoanhGiàyToolStripMenuItem, chấmCôngChoNhânViênToolStripMenuItem, báoCáoThốngKêToolStripMenuItem, trợGiúpToolStripMenuItem, chuyểnĐổiDữLiệuToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1111, 33);
+            menuStrip1.Padding = new Padding(5, 2, 0, 2);
+            menuStrip1.Size = new Size(972, 28);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
-            menuStrip1.ItemClicked += menuStrip1_ItemClicked;
+            //menuStrip1.ItemClicked += menuStrip1_ItemClicked;
             // 
             // tàiKhoảnToolStripMenuItem
             // 
             tàiKhoảnToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { đổiMậtKhẩuToolStripMenuItem, đăngXuấtTàiKhoảnToolStripMenuItem, thoátChươngTrìnhToolStripMenuItem });
             tàiKhoảnToolStripMenuItem.Font = new Font("Segoe UI", 10.8F);
             tàiKhoảnToolStripMenuItem.Name = "tàiKhoảnToolStripMenuItem";
-            tàiKhoảnToolStripMenuItem.Size = new Size(100, 29);
+            tàiKhoảnToolStripMenuItem.Size = new Size(83, 24);
             tàiKhoảnToolStripMenuItem.Text = "Tài khoản";
             // 
             // đổiMậtKhẩuToolStripMenuItem
             // 
             đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
-            đổiMậtKhẩuToolStripMenuItem.Size = new Size(257, 30);
+            đổiMậtKhẩuToolStripMenuItem.Size = new Size(211, 24);
             đổiMậtKhẩuToolStripMenuItem.Text = "Đổi mật khẩu";
             đổiMậtKhẩuToolStripMenuItem.Click += đổiMậtKhẩuToolStripMenuItem_Click;
             // 
             // đăngXuấtTàiKhoảnToolStripMenuItem
             // 
             đăngXuấtTàiKhoảnToolStripMenuItem.Name = "đăngXuấtTàiKhoảnToolStripMenuItem";
-            đăngXuấtTàiKhoảnToolStripMenuItem.Size = new Size(257, 30);
+            đăngXuấtTàiKhoảnToolStripMenuItem.Size = new Size(211, 24);
             đăngXuấtTàiKhoảnToolStripMenuItem.Text = "Đăng xuất tài khoản";
             đăngXuấtTàiKhoảnToolStripMenuItem.Click += đăngXuấtTàiKhoảnToolStripMenuItem_Click;
             // 
             // thoátChươngTrìnhToolStripMenuItem
             // 
             thoátChươngTrìnhToolStripMenuItem.Name = "thoátChươngTrìnhToolStripMenuItem";
-            thoátChươngTrìnhToolStripMenuItem.Size = new Size(257, 30);
+            thoátChươngTrìnhToolStripMenuItem.Size = new Size(211, 24);
             thoátChươngTrìnhToolStripMenuItem.Text = "Thoát chương trình";
             thoátChươngTrìnhToolStripMenuItem.Click += thoátChươngTrìnhToolStripMenuItem_Click;
             // 
@@ -107,20 +108,20 @@
             quảnLýNhânViênToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { quảnLýNhânViênToolStripMenuItem1, quảnLýTàiKhoảnNhânViênToolStripMenuItem });
             quảnLýNhânViênToolStripMenuItem.Font = new Font("Segoe UI", 10.8F);
             quảnLýNhânViênToolStripMenuItem.Name = "quảnLýNhânViênToolStripMenuItem";
-            quảnLýNhânViênToolStripMenuItem.Size = new Size(168, 29);
+            quảnLýNhânViênToolStripMenuItem.Size = new Size(138, 24);
             quảnLýNhânViênToolStripMenuItem.Text = "Quản lý nhân viên";
             // 
             // quảnLýNhânViênToolStripMenuItem1
             // 
             quảnLýNhânViênToolStripMenuItem1.Name = "quảnLýNhânViênToolStripMenuItem1";
-            quảnLýNhânViênToolStripMenuItem1.Size = new Size(318, 30);
+            quảnLýNhânViênToolStripMenuItem1.Size = new Size(260, 24);
             quảnLýNhânViênToolStripMenuItem1.Text = "Quản lý nhân viên";
             quảnLýNhânViênToolStripMenuItem1.Click += quảnLýNhânViênToolStripMenuItem1_Click;
             // 
             // quảnLýTàiKhoảnNhânViênToolStripMenuItem
             // 
             quảnLýTàiKhoảnNhânViênToolStripMenuItem.Name = "quảnLýTàiKhoảnNhânViênToolStripMenuItem";
-            quảnLýTàiKhoảnNhânViênToolStripMenuItem.Size = new Size(318, 30);
+            quảnLýTàiKhoảnNhânViênToolStripMenuItem.Size = new Size(260, 24);
             quảnLýTàiKhoảnNhânViênToolStripMenuItem.Text = "Quản lý tài khoản nhân viên";
             quảnLýTàiKhoảnNhânViênToolStripMenuItem.Click += quảnLýTàiKhoảnNhânViênToolStripMenuItem_Click;
             // 
@@ -129,34 +130,34 @@
             kinhDoanhGiàyToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { bánGiàyToolStripMenuItem, quảnLýMặtHàngToolStripMenuItem, quảnLýNhậpHàngToolStripMenuItem, quảnLýNhàCungCấpToolStripMenuItem });
             kinhDoanhGiàyToolStripMenuItem.Font = new Font("Segoe UI", 10.8F);
             kinhDoanhGiàyToolStripMenuItem.Name = "kinhDoanhGiàyToolStripMenuItem";
-            kinhDoanhGiàyToolStripMenuItem.Size = new Size(155, 29);
+            kinhDoanhGiàyToolStripMenuItem.Size = new Size(129, 24);
             kinhDoanhGiàyToolStripMenuItem.Text = "Kinh doanh Giày";
             // 
             // bánGiàyToolStripMenuItem
             // 
             bánGiàyToolStripMenuItem.Name = "bánGiàyToolStripMenuItem";
-            bánGiàyToolStripMenuItem.Size = new Size(270, 30);
+            bánGiàyToolStripMenuItem.Size = new Size(220, 24);
             bánGiàyToolStripMenuItem.Text = "Bán giày";
             bánGiàyToolStripMenuItem.Click += bánGiàyToolStripMenuItem_Click;
             // 
             // quảnLýMặtHàngToolStripMenuItem
             // 
             quảnLýMặtHàngToolStripMenuItem.Name = "quảnLýMặtHàngToolStripMenuItem";
-            quảnLýMặtHàngToolStripMenuItem.Size = new Size(270, 30);
+            quảnLýMặtHàngToolStripMenuItem.Size = new Size(220, 24);
             quảnLýMặtHàngToolStripMenuItem.Text = "Quản lý mặt hàng ";
             quảnLýMặtHàngToolStripMenuItem.Click += quảnLýMặtHàngToolStripMenuItem_Click;
             // 
             // quảnLýNhậpHàngToolStripMenuItem
             // 
             quảnLýNhậpHàngToolStripMenuItem.Name = "quảnLýNhậpHàngToolStripMenuItem";
-            quảnLýNhậpHàngToolStripMenuItem.Size = new Size(270, 30);
+            quảnLýNhậpHàngToolStripMenuItem.Size = new Size(220, 24);
             quảnLýNhậpHàngToolStripMenuItem.Text = "Quản lý nhập hàng";
             quảnLýNhậpHàngToolStripMenuItem.Click += quảnLýNhậpHàngToolStripMenuItem_Click;
             // 
             // quảnLýNhàCungCấpToolStripMenuItem
             // 
             quảnLýNhàCungCấpToolStripMenuItem.Name = "quảnLýNhàCungCấpToolStripMenuItem";
-            quảnLýNhàCungCấpToolStripMenuItem.Size = new Size(270, 30);
+            quảnLýNhàCungCấpToolStripMenuItem.Size = new Size(220, 24);
             quảnLýNhàCungCấpToolStripMenuItem.Text = "Quản lý nhà cung cấp";
             quảnLýNhàCungCấpToolStripMenuItem.Click += quảnLýNhàCungCấpToolStripMenuItem_Click;
             // 
@@ -165,13 +166,13 @@
             chấmCôngChoNhânViênToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { xácNhậnNhânViênĐiLàmToolStripMenuItem });
             chấmCôngChoNhânViênToolStripMenuItem.Font = new Font("Segoe UI", 10.8F);
             chấmCôngChoNhânViênToolStripMenuItem.Name = "chấmCôngChoNhânViênToolStripMenuItem";
-            chấmCôngChoNhânViênToolStripMenuItem.Size = new Size(232, 29);
+            chấmCôngChoNhânViênToolStripMenuItem.Size = new Size(191, 24);
             chấmCôngChoNhânViênToolStripMenuItem.Text = "Chấm công cho nhân viên";
             // 
             // xácNhậnNhânViênĐiLàmToolStripMenuItem
             // 
             xácNhậnNhânViênĐiLàmToolStripMenuItem.Name = "xácNhậnNhânViênĐiLàmToolStripMenuItem";
-            xácNhậnNhânViênĐiLàmToolStripMenuItem.Size = new Size(305, 30);
+            xácNhậnNhânViênĐiLàmToolStripMenuItem.Size = new Size(251, 24);
             xácNhậnNhânViênĐiLàmToolStripMenuItem.Text = "Xác nhận nhân viên đi làm";
             xácNhậnNhânViênĐiLàmToolStripMenuItem.Click += xácNhậnNhânViênĐiLàmToolStripMenuItem_Click;
             // 
@@ -179,7 +180,7 @@
             // 
             báoCáoThốngKêToolStripMenuItem.Font = new Font("Segoe UI", 10.8F);
             báoCáoThốngKêToolStripMenuItem.Name = "báoCáoThốngKêToolStripMenuItem";
-            báoCáoThốngKêToolStripMenuItem.Size = new Size(165, 29);
+            báoCáoThốngKêToolStripMenuItem.Size = new Size(137, 24);
             báoCáoThốngKêToolStripMenuItem.Text = "Báo cáo thống kê";
             báoCáoThốngKêToolStripMenuItem.Click += báoCáoThốngKêToolStripMenuItem_Click;
             // 
@@ -187,7 +188,7 @@
             // 
             trợGiúpToolStripMenuItem.Font = new Font("Segoe UI", 10.8F);
             trợGiúpToolStripMenuItem.Name = "trợGiúpToolStripMenuItem";
-            trợGiúpToolStripMenuItem.Size = new Size(91, 29);
+            trợGiúpToolStripMenuItem.Size = new Size(76, 24);
             trợGiúpToolStripMenuItem.Text = "Trợ giúp";
             trợGiúpToolStripMenuItem.Click += trợGiúpToolStripMenuItem_Click;
             // 
@@ -196,20 +197,20 @@
             chuyểnĐổiDữLiệuToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { sQLSangXMLToolStripMenuItem, xMLSangSQLToolStripMenuItem });
             chuyểnĐổiDữLiệuToolStripMenuItem.Font = new Font("Segoe UI", 10.8F);
             chuyểnĐổiDữLiệuToolStripMenuItem.Name = "chuyểnĐổiDữLiệuToolStripMenuItem";
-            chuyểnĐổiDữLiệuToolStripMenuItem.Size = new Size(175, 29);
+            chuyểnĐổiDữLiệuToolStripMenuItem.Size = new Size(145, 24);
             chuyểnĐổiDữLiệuToolStripMenuItem.Text = "Chuyển đổi dữ liệu";
             // 
             // sQLSangXMLToolStripMenuItem
             // 
             sQLSangXMLToolStripMenuItem.Name = "sQLSangXMLToolStripMenuItem";
-            sQLSangXMLToolStripMenuItem.Size = new Size(224, 30);
+            sQLSangXMLToolStripMenuItem.Size = new Size(172, 24);
             sQLSangXMLToolStripMenuItem.Text = "SQL sang XML";
             sQLSangXMLToolStripMenuItem.Click += sQLSangXMLToolStripMenuItem_Click;
             // 
             // xMLSangSQLToolStripMenuItem
             // 
             xMLSangSQLToolStripMenuItem.Name = "xMLSangSQLToolStripMenuItem";
-            xMLSangSQLToolStripMenuItem.Size = new Size(224, 30);
+            xMLSangSQLToolStripMenuItem.Size = new Size(172, 24);
             xMLSangSQLToolStripMenuItem.Text = "XML sang SQL";
             xMLSangSQLToolStripMenuItem.Click += xMLSangSQLToolStripMenuItem_Click;
             // 
@@ -222,9 +223,11 @@
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
-            groupBox1.Location = new Point(282, 158);
+            groupBox1.Location = new Point(247, 118);
+            groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(474, 281);
+            groupBox1.Padding = new Padding(3, 2, 3, 2);
+            groupBox1.Size = new Size(415, 211);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông tin người dùng";
@@ -233,9 +236,9 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label7.Location = new Point(237, 185);
+            label7.Location = new Point(207, 139);
             label7.Name = "label7";
-            label7.Size = new Size(26, 28);
+            label7.Size = new Size(21, 21);
             label7.TabIndex = 5;
             label7.Text = "A";
             // 
@@ -243,9 +246,9 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label6.Location = new Point(237, 116);
+            label6.Location = new Point(207, 87);
             label6.Name = "label6";
-            label6.Size = new Size(26, 28);
+            label6.Size = new Size(21, 21);
             label6.TabIndex = 4;
             label6.Text = "A";
             // 
@@ -253,9 +256,9 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label5.Location = new Point(237, 55);
+            label5.Location = new Point(207, 41);
             label5.Name = "label5";
-            label5.Size = new Size(26, 28);
+            label5.Size = new Size(21, 21);
             label5.TabIndex = 3;
             label5.Text = "A";
             // 
@@ -263,9 +266,9 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label4.Location = new Point(33, 185);
+            label4.Location = new Point(29, 139);
             label4.Name = "label4";
-            label4.Size = new Size(161, 28);
+            label4.Size = new Size(131, 21);
             label4.TabIndex = 2;
             label4.Text = "Tên người dùng";
             // 
@@ -273,9 +276,9 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label3.Location = new Point(33, 116);
+            label3.Location = new Point(29, 87);
             label3.Name = "label3";
-            label3.Size = new Size(163, 28);
+            label3.Size = new Size(131, 21);
             label3.TabIndex = 1;
             label3.Text = "Tên đăng nhập: ";
             // 
@@ -283,9 +286,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label2.Location = new Point(33, 55);
+            label2.Location = new Point(29, 41);
             label2.Name = "label2";
-            label2.Size = new Size(84, 28);
+            label2.Size = new Size(68, 21);
             label2.TabIndex = 0;
             label2.Text = "Quyền: ";
             // 
@@ -293,24 +296,26 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(282, 68);
+            label1.Location = new Point(247, 51);
             label1.Name = "label1";
-            label1.Size = new Size(164, 46);
+            label1.Size = new Size(132, 37);
             label1.TabIndex = 2;
             label1.Text = "Xin chào: ";
             // 
             // TrangChu
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(1111, 494);
+            ClientSize = new Size(972, 370);
             Controls.Add(label1);
             Controls.Add(groupBox1);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "TrangChu";
             Text = "TrangChu";
+            Load += TrangChu_Load_1;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             groupBox1.ResumeLayout(false);

@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Data;
 using System.Diagnostics;
+using System.IO;
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Xsl;
 using QuanLyBanGiay.CLASS;
 
 namespace QuanLyBanGiay.GUI
@@ -22,7 +25,9 @@ namespace QuanLyBanGiay.GUI
             dataGridView1.DataSource = _banHang.Table;
         }
 
+        // =========================
         // BUTTON6: TÌM KIẾM GIÀY THEO MÃ
+        // =========================
         private void button6_Click(object sender, EventArgs e)
         {
             string maGiay = textBox3.Text.Trim();
@@ -55,7 +60,9 @@ namespace QuanLyBanGiay.GUI
             textBox9.Text = row["MaNhaCungCap"].ToString();
         }
 
+        // =========================
         // BUTTON1: MUA NGAY
+        // =========================
         private void button1_Click(object sender, EventArgs e)
         {
             string maGiay = textBox1.Text.Trim();
@@ -67,7 +74,6 @@ namespace QuanLyBanGiay.GUI
                 return;
             }
 
-            // Lấy số lượng tồn
             if (!int.TryParse(textBox5.Text.Trim(), out int soLuongTon))
             {
                 MessageBox.Show("Số lượng tồn không hợp lệ.",
@@ -75,7 +81,6 @@ namespace QuanLyBanGiay.GUI
                 return;
             }
 
-            // textBox11: SỐ LƯỢNG MUA
             if (!int.TryParse(textBox11.Text.Trim(), out int soLuongMua) || soLuongMua <= 0)
             {
                 MessageBox.Show("Vui lòng nhập số lượng mua hợp lệ (> 0).",
@@ -90,7 +95,6 @@ namespace QuanLyBanGiay.GUI
                 return;
             }
 
-            // XÁC NHẬN THANH TOÁN
             DialogResult result = MessageBox.Show(
                 $"Bạn có chắc chắn mua {soLuongMua} đôi giày mã {maGiay} không?",
                 "Xác nhận mua hàng",
@@ -98,12 +102,8 @@ namespace QuanLyBanGiay.GUI
                 MessageBoxIcon.Question
             );
 
-            if (result == DialogResult.No)
-            {
-                return;
-            }
+            if (result == DialogResult.No) return;
 
-            // TRỪ SỐ LƯỢNG TỒN
             int soLuongConLai = soLuongTon - soLuongMua;
 
             bool ok = _banHang.UpdateSoLuong(maGiay, soLuongConLai);
@@ -115,7 +115,6 @@ namespace QuanLyBanGiay.GUI
                 return;
             }
 
-            // GHI PHIEUMUA.XML
             if (!int.TryParse(textBox10.Text.Trim(), out int donGiaBan))
             {
                 MessageBox.Show("Đơn giá bán không hợp lệ, nhưng số lượng tồn đã được cập nhật.",
@@ -127,10 +126,8 @@ namespace QuanLyBanGiay.GUI
                 _phieuMua.ThemPhieuMua(maGiay, soLuongMua, donGiaBan, thanhTien);
             }
 
-            // Cập nhật lại textbox số lượng tồn
             textBox5.Text = soLuongConLai.ToString();
 
-            // Refresh lại DataGridView
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = _banHang.Table;
 
@@ -138,7 +135,12 @@ namespace QuanLyBanGiay.GUI
                             "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        // BUTTON5: XEM FILE PHIEUMUA.XML
+        // =========================
+        // BUTTON5: PREVIEW (XSLT)
+        // =========================
+
+        // ❌ CÁCH CŨ (MỞ XML TRỰC TIẾP) – GIỮ LẠI ĐỂ THAM KHẢO
+        /*
         private void button5_Click(object sender, EventArgs e)
         {
             string path = _phieuMua.GetPath();
@@ -152,11 +154,51 @@ namespace QuanLyBanGiay.GUI
                                 "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        */
 
-        // CLICK LÊN DÒNG TRONG DATAGRIDVIEW → ĐỔ LÊN TEXTBOX
+        // ✅ CÁCH MỚI: PREVIEW BẰNG XSLT
+        private void button5_Click(object sender, EventArgs e)
+        {
+            PreviewGiayBangXSLT();
+        }
+
+        // =========================
+        // HÀM PREVIEW XSLT (KHÔNG ẢNH HƯỞNG LOGIC)
+        // =========================
+        private void PreviewGiayBangXSLT()
+        {
+            try
+            {
+                string xmlPath = Path.Combine(Application.StartupPath, "Giay.xml");
+                string xslPath = Path.Combine(Application.StartupPath, "Giay.xsl");
+                string htmlPath = Path.Combine(Application.StartupPath, "Giay_Preview.html");
+
+                if (!File.Exists(xslPath))
+                {
+                    MessageBox.Show("Chưa có file Giay.xsl để preview.",
+                                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                XslCompiledTransform xslt = new XslCompiledTransform();
+                xslt.Load(xslPath);
+                xslt.Transform(xmlPath, htmlPath);
+
+                Process.Start(new ProcessStartInfo(htmlPath) { UseShellExecute = true });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi preview XSLT: " + ex.Message,
+                                "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // =========================
+        // CLICK LÊN GRID → ĐỔ LÊN TEXTBOX
+        // =========================
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0) return; // click header thì bỏ qua
+            if (e.RowIndex < 0) return;
 
             DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
 
@@ -169,6 +211,10 @@ namespace QuanLyBanGiay.GUI
             textBox8.Text = row.Cells["DonGiaNhap"].Value?.ToString();
             textBox10.Text = row.Cells["DonGiaBan"].Value?.ToString();
             textBox9.Text = row.Cells["MaNhaCungCap"].Value?.ToString();
+        }
+
+        private void BanHang_Load(object sender, EventArgs e)
+        {
         }
     }
 }
